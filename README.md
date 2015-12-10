@@ -3,9 +3,9 @@ Editorial Dash Docset
 
 [Editorial](http://omz-software.com/editorial/) is a plain text editor for iOS with great [Markdown](https://daringfireball.net/projects/markdown/syntax) support and powerful automation tools.
 
-See the [Editorial Documentation](http://omz-software.com/editorial/docs/) and [Editorial Workflows](http://www.editorial-workflows.com/) for the online docs and examples of automation workflows.
+See the [Editorial Documentation](http://omz-software.com/editorial/docs/) and [Editorial Workflows](http://www.editorial-workflows.com/) for the online docs and examples of automation workflows. It may also help to read up on [Python's documentation](https://docs.python.org/2.7/), as Editorial has a [Python](http://python.org) interpreter packaged in.
 
-For more help with Editorial, see [omz:forum](https://forum.omz-software.com/)
+For more help with Editorial, see [omz:forum](https://forum.omz-software.com/).
 
 ### Author:
 
@@ -31,7 +31,10 @@ Updated by [Ole Zorn](https://github.com/omz).
 
 ```
 doc2dash -fv --name Editorial -d build -i icon.png --index-page index.html editorial-docs
-tar --exclude='.DS_Store' -cvzf build/Editorial.tgz build/Editorial.docset
+cd _build && tar --exclude='.DS_Store' -cvzf Editorial.tgz Editorial.docset
+
+# or to install to Dash's default directory for docsets:
+doc2dash -fv --name Editorial -i icon.png --index-page index.html -A editorial-docs
 ```
 
 #### Option 2:
