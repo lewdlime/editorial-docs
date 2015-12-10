@@ -5,4 +5,5 @@ install: "pip install -r requirements.txt"
 script:
   - "mkdir _build"
   - "doc2dash -fv --name Editorial -d _build -i icon.png --index-page index.html Editorial"
+  - "cp icon@2x.png _build/Editorial.docset"
   - "cd _build && tar --exclude='.DS_Store' -cvzf Editorial.tgz Editorial.docset"
