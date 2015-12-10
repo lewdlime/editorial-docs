@@ -21,7 +21,7 @@ more_vert:
     link: /Editorial.xml
   option3:
     name: About Site
-    link: /about
+    link: /editorial-docs/about
 
 disqus: true
 disqus_shortname: 'leesavide'

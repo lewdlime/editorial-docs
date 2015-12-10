@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About Site"
-permalink: /about
+permalink: editorial-docs/about/
 ---
 ###### A Jekyll theme based in Google Material Design Lite library.
 
