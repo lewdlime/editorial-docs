@@ -4,7 +4,7 @@ description: > # this means to ignore newlines until "baseurl:"
   This documentation contains in-depth information about using
   the app and extending it with your own workflows and Python scripts.
 baseurl: ""
-url: "http://leesavide.github.io/editorial-docs"
+url: "http://editorial-docs.github.io"
 twitter_username: lewdlemon
 github_username:  leesavide
 
@@ -20,8 +20,8 @@ more_vert:
     name: Docset Feed
     link: /Editorial.xml
   option3:
-    name: About Site
-    link: /editorial-docs/about
+    name: About
+    link: /about/
 
 disqus: true
 disqus_shortname: 'leesavide'
