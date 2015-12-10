@@ -1,4 +1,4 @@
-Editorial Dash Docset
+Editorial Dash Docset [![Build Status](https://travis-ci.org/leesavide/editorial-docs.svg?branch=master)](https://travis-ci.org/leesavide/editorial-docs)
 =======================
 
 [Editorial](http://omz-software.com/editorial/) is a plain text editor for iOS with great [Markdown](https://daringfireball.net/projects/markdown/syntax) support and powerful automation tools.
