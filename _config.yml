@@ -1,0 +1,29 @@
+title: Editorial Docset
+email: laughingman182@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  This documentation contains in-depth information about using
+  the app and extending it with your own workflows and Python scripts.
+baseurl: ""
+url: "http://leesavide.github.io/editorial-docs"
+twitter_username: lewdlemon
+github_username:  leesavide
+
+header_type: default
+post_type: highlight
+pagination_type: default
+
+more_vert:
+  option1:
+    name: Docset
+    link: /Editorial.tgz
+  option2:
+    name: Docset Feed
+    link: /Editorial.xml
+  option3:
+    name: About Site
+    link: /about
+
+disqus: true
+disqus_shortname: 'leesavide'
+
+markdown: kramdown

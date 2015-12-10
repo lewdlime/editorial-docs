@@ -36,9 +36,11 @@ $RECYCLE.BIN/
 .eggs/
 .fseventsd
 .installed.cfg
+.jekyll-metadata
 .LSOverride
 .netrwhist
 .Python
+.sass-cache/
 .Spotlight-V100
 .TemporaryItems
 .tox/
@@ -49,6 +51,7 @@ $RECYCLE.BIN/
 [._]s[a-w][a-z]
 __pycache__/
 _build/
+_site/
 build/
 coverage.xml
 Desktop.ini
