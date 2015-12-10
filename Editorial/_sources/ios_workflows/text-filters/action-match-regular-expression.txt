@@ -1,0 +1,21 @@
+.. _workflow-action-match-regular-expression:
+
+========================
+Find
+========================
+
+*Finds the first occurrence of a text or regular expression in the input*
+
+* **Input:** The text in which the pattern should be matched
+* **Output:** The matched part of the text (or empty if no match was found)
+
+Parameters
+----------
+
+* **Regular Expression:** The regular expression to match in the input
+* **Match Group:** The group of the match that should be used for the output. The default (``0``) produces the entire match as output.
+
+See Also
+--------
+
+* :ref:`workflow-action-find-replace`

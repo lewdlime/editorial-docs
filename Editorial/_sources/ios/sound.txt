@@ -1,0 +1,56 @@
+
+:mod:`sound` --- Play simple sounds
+======================================================
+
+.. module:: sound
+   :synopsis: Simple sound creation
+.. sectionauthor:: Ole Zorn
+
+
+The :mod:`sound` module contains functions for playing simple sound effects on iOS.
+
+The following sound effects are bundled with Editorial, and can be used directly with :func:`play_effect` (without specifying a file extension). When viewing the documentation inside Editorial, you can tap on one of the names to play a preview:
+
+* `Beep <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Beep%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Bleep <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Bleep%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Boing_1 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Boing_1%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Clank <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Clank%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Click_1 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Click_1%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Click_2 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Click_2%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Clock_1 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Clock_1%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Coin_1 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Coin_1%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Coin_2 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Coin_2%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Crashing <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Crashing%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Ding_1 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Ding_1%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Ding_2 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Ding_2%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Ding_3 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Ding_3%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Error <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Error%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Explosion_1 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Explosion_1%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Footstep <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Footstep%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Jump <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Jump%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Shot <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Shot%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Spaceship <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Spaceship%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Woosh_1 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Woosh_1%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+* `Woosh_2 <javascript:if%20(navigator.userAgent.indexOf(%27Editorial%27)%20!=%20-1)%20{window.location.href=%27x-editorial-play-sound://Woosh_2%27;}%20else%20{alert(%27Sound%20previews%20are%20not%20available%20when%20viewing%20the%20documentation%20online.%27);}>`_
+
+Functions in the :mod:`sound` module:
+
+.. function:: load_effect(name)
+
+   Preload the sound effect with the given name to reduce latency when using :func:`play_effect`.
+
+.. function:: play_effect(name[, volume, pitch])
+   
+   Play the sound effect with the given name.
+   
+   Playback is asynchronous, i.e. the function returns before the sound has finished playing.
+   The return value is an opaque identifier that can be used with the :func:`stop_effect` function.
+   The `volume` and `pitch` arguments are optional, by default, the effect is played with the global volume, as set by :func:`set_volume`.
+
+.. function:: stop_effect(effect_id)
+
+   Stops playback of a sound effect. The `effect_id` is the return value of :func:`play_effect`.
+
+.. function:: set_volume(vol)
+
+   Sets the default volume for all sound effects (between 0.0 and 1.0, the default is 0.5).

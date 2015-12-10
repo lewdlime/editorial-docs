@@ -1,0 +1,27 @@
+.. _workflow-action-compose-tweet:
+
+=================
+Compose Tweet
+=================
+
+*Opens a tweet composition sheet*
+
+The next action starts when the dialog is dismissed. By default, the workflow is stopped when the tweet sheet is canceled, but you can also continue the workflow in that case.
+
+Even though you can set the initial text, it can always be changed before actually posting the tweet.
+
+* **Input:** Can be used in the `Text` parameter
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **Text:** The initial text of the tweet (may be truncated if too long)
+* **Stop if Cancelled:** When enabled (the default), the workflow stops if the tweet sheet is canceled. Otherwise, the workflow continues normally.
+
+See Also
+--------
+
+* :ref:`workflow-action-share-text`
+* :ref:`workflow-action-compose-text-message`
+* :ref:`workflow-action-compose-email`

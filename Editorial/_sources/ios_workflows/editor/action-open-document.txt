@@ -1,0 +1,24 @@
+.. _workflow-action-open-document:
+
+=====================
+Open Document
+=====================
+
+*Opens the given document in the editor*
+
+The document name can include a folder path relative to the document library.
+
+* **Input:** N/A
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **File Name:** The file name of the document to open. Must include the file extension (e.g. .txt or .md)
+* **In Dropbox:** When enabled, the file is looked for in Dropbox. The file can only be opened if it already has been downloaded.
+
+See Also
+--------
+
+* :ref:`workflow-action-get-file-contents`
+* :ref:`workflow-action-set-file-contents`

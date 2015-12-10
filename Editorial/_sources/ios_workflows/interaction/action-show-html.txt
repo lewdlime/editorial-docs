@@ -1,0 +1,24 @@
+.. _workflow-action-show-html:
+
+=================
+Show HTML
+=================
+
+*Shows custom HTML in the preview panel*
+
+This action allows you to use the *Preview* accessory panel to show your own custom HTML/CSS. When custom HTML is shown, the panel contains an additional `Done` button that switches back to the default Markdown preview.
+
+* **Input:** Can be used as a variable in the `HTML` parameter
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **HTML:** The source code of your HTML. You can use workflow variables here, in order to build a template that gets expanded dynamically when the workflow is run.
+* **Title:** Sets the title of the `Preview` tab while your custom HTML is shown. This has to be relatively short if you don't want it to be truncated.
+* **Base URL:** Used for loading relative image references, links etc. Can be left empty if you only use absolute URLs.
+
+See Also
+--------
+
+* :ref:`workflow-action-convert-markdown`

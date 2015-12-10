@@ -1,0 +1,22 @@
+.. _workflow-action-format-text:
+
+=================
+Generate Text
+=================
+
+*Passes the given text (with variables filled in) as input to the next action*
+
+This can be useful for producing input for "filter" actions and for combining multiple variables into a single piece of text.
+
+* **Input:** Can be used in the `Text` parameter
+* **Output:** The text with any variables and placeholders filled in
+
+Parameters
+----------
+
+* **Text:** The output text -- can contain variable placeholders
+
+See Also
+--------
+
+* :ref:`workflow-action-set-variable`

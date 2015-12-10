@@ -1,0 +1,220 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Editorial &mdash; Editorial Documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Editorial Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Editorial Documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0">
+    
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python')[i];
+            return codeBlock.innerText;
+        }
+        
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+    
+ 
+
+  </head>
+  <body ontouchstart="">
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="http://omz-software.com/editorial"><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -4px; margin-right: 4px;"/></a></li>
+        <li><a href="../index.html">Editorial Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="using-editorial">
+<span id="editorial-using"></span><h1>Using Editorial<a class="headerlink" href="#using-editorial" title="Permalink to this headline">¶</a></h1>
+<p>This page gives an overview of the Editorial UI and also contains some useful
+tips and tricks to help you get the most out of it.</p>
+<p>The app is organized in three main panels that you can show and hide by swiping left and right.</p>
+<img align="right" alt="../_images/editorial_ui_overview.png" class="align-right" src="../_images/editorial_ui_overview.png" style="width: 248px;" />
+<ol class="arabic simple">
+<li><strong>File Browser</strong> &#8211; You can open documents or create new files from here</li>
+<li><strong>Editor</strong> &#8211; This is where you work on the selected document&#8217;s text</li>
+<li><strong>Accessory Panels</strong> &#8211; A collection of additional tools: The Markdown preview, web browser tabs, a Python console, and this documentation</li>
+</ol>
+<div class="section" id="creating-and-managing-files">
+<h2>Creating and Managing Files<a class="headerlink" href="#creating-and-managing-files" title="Permalink to this headline">¶</a></h2>
+<p>In the file browser you can view a list of your files and folders, and create new documents.</p>
+<p>You can work with local files that are only stored on your device, or sync with Dropbox. When you first select the Dropbox folder, you&#8217;ll be asked to link your Dropbox account with Editorial.</p>
+<p>By default, Editorial syncs with the folder <cite>/Apps/Editorial</cite> in your Dropbox. If you want to use a different folder, you can change this in the <a class="reference internal" href="editorial_settings.html#editorial-settings"><em>settings</em></a>.</p>
+<p>The bottom toolbar lets you to add a new document (<strong>+</strong> button), change the sort order of the list (by date or by name), open the settings, or start a Dropbox sync. Note that Editorial syncs with Dropbox automatically, so you only have to trigger a manual sync if you made changes on other devices less than a few minutes ago.</p>
+<p>To delete or move files, tap the <cite>Edit</cite> button at the top. This allows you to select multiple files and then choose the action you want to perform at the bottom. You can also use a swipe gesture to delete single files.</p>
+<p>When you tap the <strong>+</strong> button, the template picker is shown, and you can select the type of document you&#8217;d like to create. The document templates are all empty by default, but you can easily create your own templates by tapping &#8220;New Template&#8221; at the bottom of the picker.</p>
+<p>Templates can be useful for creating documents that have a fixed format, e.g. report cards, but Editorial&#8217;s template system is actually much more powerful than that. Each template is a complete workflow that can include custom logic or even UI that is shown before or after the document is created. For example, if you prefer to enter a filename before a document is created, you can easily do this by adding a <a class="reference internal" href="../ios_workflows/interaction/action-request-text-input.html#workflow-action-request-text-input"><em>Request Text Input</em></a> action before the <a class="reference internal" href="../ios_workflows/editor/action-create-document.html#workflow-action-create-document"><em>Create Document</em></a> action (which is included by default in a template workflow).</p>
+<p>To learn more about workflows, please refer to the <a class="reference internal" href="../ios_workflows/index.html#ios-workflows"><em>Building Workflows</em></a> chapter &#8211; everything you can do in a workflow also applies to document templates.</p>
+</div>
+<div class="section" id="navigating-documents">
+<h2>Navigating Documents<a class="headerlink" href="#navigating-documents" title="Permalink to this headline">¶</a></h2>
+<p>When you have a document open in the editor, you can tap on its title to open the navigation/outline popup.</p>
+<img align="left" alt="../_images/editorial_navigation_popup.png" class="align-left" src="../_images/editorial_navigation_popup.png" style="width: 323px;" />
+<p>The type of outline depends on the document &#8211; a list of headers will be shown for Markdown documents, a list of projects for TaskPaper files. Tap a heading to navigate quickly within larger documents.</p>
+<p>You can also rename a document from the navigation popup.</p>
+<p>If your document contains links, you can open them in the in-app browser by tapping. This only works while the keybord isn&#8217;t active because it would otherwise be difficult to select text without accidentally opening links. To open a link while editing, simply select the link&#8217;s title and choose &#8220;Open Link&#8221; from the editing menu.</p>
+<img align="right" alt="../_images/editorial_link_menu.png" class="align-right" src="../_images/editorial_link_menu.png" style="width: 385px;" />
+</div>
+<div class="section" id="quick-settings">
+<h2>Quick Settings<a class="headerlink" href="#quick-settings" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Aa</strong> button allows you to adjust editor-related settings quickly. On the iPhone, you&#8217;ll find the button at the top of the document outline (tap the title first).</p>
+<ul class="simple">
+<li><strong>Dark Theme</strong> &#8211; Turn this on if you prefer to work in a dark environment</li>
+<li><strong>Bookmarks Bar</strong> (iPad only) &#8211; This gives you quick access to your favorite documents or workflows</li>
+<li><strong>Text Zoom</strong> &#8211; Quickly adjust the text size without having to tweak multiple settings</li>
+<li><strong>Arrange Paragraphs</strong> &#8211; When this mode is enabled, you can drag lines/paragraphs by dragging their right margin</li>
+<li><strong>Syntax Mode</strong> &#8211; If you use uncommon file extensions for Markdown (or any other supported document type), you can switch to a different mode here. The selected mode will be remembered for all files that have the same file extension.</li>
+</ul>
+</div>
+<div class="section" id="keyboard-tips">
+<h2>Keyboard Tips<a class="headerlink" href="#keyboard-tips" title="Permalink to this headline">¶</a></h2>
+<p>Editorial extends the standard iOS keyboard with an additional row of special characters that are often used in Markdown. Using it should be straightforward if you&#8217;re familiar with the standard iOS keyboard, but the extra row has some additional functionality you might not be aware of:</p>
+<ul class="simple">
+<li>By swiping left and right on the extended keyboard row, you can move the caret on the current line, which can make it easier to position it precisely.</li>
+<li>Many keys can be used for multiple characters. Tap and hold one of them to show a popup, slide to the character you want, and release the finger. On the iPad, you can also perform a swipe-up gesture on such a key to insert the first alternative character, without having to wait for the popup.</li>
+<li>When you have text selected, you can use the  <tt class="docutils literal"><span class="pre">(</span></tt>, <tt class="docutils literal"><span class="pre">)</span></tt>, <tt class="docutils literal"><span class="pre">[</span></tt>, <tt class="docutils literal"><span class="pre">]</span></tt>, <tt class="docutils literal"><span class="pre">&quot;</span></tt>, <tt class="docutils literal"><span class="pre">`</span></tt> and <tt class="docutils literal"><span class="pre">*</span></tt> keys to enclose the selection in a pair of matching characters. On the <tt class="docutils literal"><span class="pre">*</span></tt> key, you can also do a swipe-up gesture to enclose the selection in two asterisks on each side (making the selected text bold in Markdown documents).</li>
+<li>Entering an opening bracket or parentheses automatically inserts the matching counterpart (this can be disabled in the editor settings).</li>
+<li>iPad only: You can swipe up on the <cite>Undo</cite> key to <cite>redo</cite> changes (alternatively, you can tap and hold it to select from <cite>Undo</cite> and <cite>Redo</cite>).</li>
+<li>iPad only: To quickly insert a footnote, simply tap the <tt class="docutils literal"><span class="pre">[</span></tt> key, then swipe up on the same key to insert the <tt class="docutils literal"><span class="pre">^</span></tt> character (the closing <tt class="docutils literal"><span class="pre">]</span></tt> is inserted automatically).</li>
+<li>Tap on text in the editor with <cite>two fingers</cite> to quickly select an entire paragraph.</li>
+</ul>
+</div>
+<div class="section" id="snippets">
+<span id="editorial-snippets"></span><h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
+<img align="left" alt="../_images/editorial_snippets.png" class="align-left" src="../_images/editorial_snippets.png" style="width: 50px;" />
+<p>Snippets are little pieces of text that you can insert quickly by typing abbreviations, or by selecting them from the snippet list that is available on the extended keyboard.</p>
+<p>A snippet is basically the same as a workflow with a single <a class="reference internal" href="../ios_workflows/editor/action-replace-selected-text.html#workflow-action-replace-selected-text"><em>Replace Selected Text</em></a> action, but it is much faster to create.</p>
+<p>Snippets can contain any of the <a class="reference internal" href="../ios_workflows/variables.html#ios-workflows-variables"><em>built-in variables</em></a>, so you can use placeholders for the current date, selected text, clipboard contents, or even the title of the page currently loaded in the browser panel. You can also define where the caret should be after inserting the snippet.</p>
+</div>
+<div class="section" id="accessory-panels">
+<h2>Accessory Panels<a class="headerlink" href="#accessory-panels" title="Permalink to this headline">¶</a></h2>
+<p>You can reveal a collection of different accessory panels with a left swipe gesture in the editor. These panels contain helpful additional tools that are not directly related to editing text.</p>
+<div class="section" id="preview">
+<h3>Preview<a class="headerlink" href="#preview" title="Permalink to this headline">¶</a></h3>
+<p>When you&#8217;re editing a Markdown or Fountain document, this panel shows an HTML preview of your current document. It is refreshed automatically when you show it.</p>
+<p>Using the <a class="reference internal" href="../ios_workflows/interaction/action-show-html.html#workflow-action-show-html"><em>Show HTML</em></a> action in a <a class="reference internal" href="../ios_workflows/index.html#ios-workflows"><em>workflow</em></a>, you can also use this panel for showing dynamically-generated, custom HTML.</p>
+</div>
+<div class="section" id="browser">
+<h3>Browser<a class="headerlink" href="#browser" title="Permalink to this headline">¶</a></h3>
+<p>Editorial includes an in-app web browser for quick research while you&#8217;re writing. To open a browser tab, simply tap the &#8220;Add tab&#8221; button in the accessory panel.</p>
+<p>You can automate some aspects of the web browser using workflows, e.g. with the <em class="xref std std-ref">action-open-url</em> workflow action. The current URL or page title of the browser can also be used within snippets, e.g. if you want to create a snippet that inserts a Markdown link to the currently loaded page.</p>
+</div>
+<div class="section" id="console">
+<h3>Console<a class="headerlink" href="#console" title="Permalink to this headline">¶</a></h3>
+<p>The console shows output from Python scripts (see <a class="reference internal" href="index.html#ios"><em>Scripting Editorial with Python</em></a>), and can be used to enter Python commands interactively.</p>
+<p>You can open the console from an empty web browser tab.</p>
+<p>Even if you&#8217;re not interested in the programming part, you might find it useful as a calculator &#8211; just try entering some mathematical expressions like <tt class="docutils literal"><span class="pre">12</span> <span class="pre">*</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">5</span></tt>. It is also used by the <a class="reference internal" href="../ios_workflows/interaction/action-console-output.html#workflow-action-console-output"><em>Console Output</em></a> workflow action.</p>
+</div>
+<div class="section" id="continue-reading">
+<h3>Continue Reading...<a class="headerlink" href="#continue-reading" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="editorial_writing_markdown.html#editorial-writing-markdown"><em>Writing Markdown</em></a></li>
+<li><a class="reference internal" href="editorial_writing_todo_lists.html#editorial-writing-todo-lists"><em>Writing Todo Lists</em></a></li>
+<li><a class="reference internal" href="editorial_settings.html#editorial-settings"><em>Settings</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.  
+    <a href="http://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on May 28, 2015.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+
+  </body>
+</html>

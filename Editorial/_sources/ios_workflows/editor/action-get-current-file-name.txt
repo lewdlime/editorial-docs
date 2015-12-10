@@ -1,0 +1,24 @@
+.. _workflow-action-get-current-file-name:
+
+=====================
+Get Document Name
+=====================
+
+*Gets the name of the file currently being edited*
+
+If no file is open, the output is empty. The action can optionally strip the file extension or include the folder(s) the file is contained in. If you don't need these options, you can use the built-in `File Name` and `File Extension` :ref:`variables <ios-workflows-variables>` instead.
+
+* **Input:** N/A
+* **Output:** The file name of the current document
+
+Parameters
+----------
+
+* **Include Folder:** If set to `on`, include the folder(s) the document is contained in. The path is relative to the document root (either "Local" or "Dropbox").
+* **Include Extension:** If set to `on` (the default), the file extension (e.g. `.txt` or `.md`) is included in the output.
+
+See Also
+--------
+
+* :ref:`workflow-action-document-text`
+* :ref:`ios-workflows-variables`

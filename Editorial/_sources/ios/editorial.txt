@@ -1,0 +1,288 @@
+.. _using-editorial:
+
+================
+Using Editorial
+================
+
+This page gives an overview of the Editorial UI and also contains some useful
+tips and tricks to help you get the most out of it.
+
+The app is organized in three main panels that you can show and hide by swiping left and right.
+
+.. image:: editorial_ui_overview.png
+   :align: right
+   :width: 248px
+
+1. File Browser -- You can open documents or create new files from here.
+2. Editor -- This is where you work on the selected document's text.
+3. Accessory Panel -- A collection of additional tools: The Markdown preview, a Python console, this documentation, and web browser tabs for quick research.
+
+Editorial is optimized for writing Markdown. If you're new to this, or if you need a little refresh on its basic syntax, please refer to the short :ref:`editorial_markdown_primer`.
+
+Table of Contents
+-----------------
+
+1. `The File Browser`_
+
+2. `The Editor`_
+
+ * `Navigating Documents`_
+ 
+ * `Using Snippets`_
+ 
+ * `Using Bookmarks`_
+ 
+ * `Keyboard Tips`_
+ 
+3. `Accessory Panel`_
+
+4. `Settings`_
+
+5. `The Editorial URL Scheme`_
+
+
+The File Browser
+----------------
+
+.. image:: editorial_filebrowser_mode.png
+   :align: right
+   :width: 187px
+
+In the file browser you can view a list of your files and folders, and create new documents. When you are in the root folder, you can switch between files that are only on this device (`Local`) and files in your Dropbox, by switching between the corresponding tabs at the top.
+
+When you first switch to the `Dropbox` tab, you'll be asked to link your Dropbox account with Editorial. If you have the official Dropbox app installed, this will switch to it and ask you to authorize access. Otherwise, a login dialog will be shown within Editorial.
+
+By default, Editorial syncs all the files in the Dropbox folder `/Apps/Editorial`. If you want to use a different folder, you can change this in the :ref:`settings <editorial_settings>`.
+
+The bottom toolbar lets you to add a new document (**+** button), and change the sort order (by date or by name).
+
+To delete or move files, tap the `Edit` button at the top. This allows you to select multiple files and then choose the action you want to perform at the bottom.
+
+.. tip::
+
+   .. image:: editorial_documentlist.png
+      :width: 47px
+      :align: right
+   
+   On the iPad, you can quickly access a list of recently-used documents directly from the editor by tapping and holding the `document list` button.
+
+The Editor
+------------
+The editor is where you'll spend most of your time. It is optimized for editing :ref:`Markdown <editorial_markdown_primer>` and plain text. When you're writing in Markdown, you can see a basic preview right within the text. For example, surrounding a word with an asterisk (*) makes it `italic`, two asterisks make it **bold**. If you prefer editing your Markdown without any highlighting, you can turn this feature off, or adjust it for individual elements in the :ref:`settings <editorial_settings>`. For a full preview, you can switch to the :ref:`preview panel <editorial_accessories>`.
+
+The editor is extensible with a very flexible system of drag'n'drop workflows and Python scripts. To learn more about these, please refer to the chapters :ref:`ios` and :ref:`ios-workflows`.
+
+Navigating Documents
+^^^^^^^^^^^^^^^^^^^^^
+
+Tap on the title of your document at the top to open the navigation/outline popup.
+
+.. image:: editorial_navigation_popup.png
+   :width: 323px
+   :align: left
+
+You can see the current word count there, and, if you're using :ref:`Markdown <editorial_markdown_primer>`, you can jump directly to the different sections (headings) in your document.
+
+You can also rename a document from the navigation popup.
+
+If you have links in your Markdown documents, you can tap one of them to open its target in the built-in browser. This only works when the keyboard is not active (because it would be difficult to actually edit a link otherwise). 
+
+.. image:: editorial_link_menu.png
+   :width: 385px
+   :align: right
+
+When the keyboard is active, you can select the highlighted part of the link and choose "Open Link" from the contextual menu. You can use the same method for jumping to footnotes.
+
+Using Snippets
+^^^^^^^^^^^^^^
+
+.. image:: editorial_snippets.png
+   :width: 50px
+   :align: left
+
+Snippets are little pieces of text that you can insert quickly by typing abbreviations, or by selecting them from the snippet list that is available on the extended keyboard.
+
+A snippet is basically the same as a workflow with a single :ref:`workflow-action-replace-selected-text` action, but it is much faster to create.
+
+Snippets can contain any of the :ref:`built-in variables <ios-workflows-variables>`, so you can use placeholders for the current date, selected text, clipboard contents, or even the title of the page currently loaded in the browser panel. You can also define where the caret should be after inserting the snippet.
+
+Using Bookmarks
+^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+    The bookmarks bar is only available on the iPad.
+
+You can use bookmarks for quick access to documents, workflows, and websites.
+
+.. image:: editorial_bookmarks.png
+   :width: 312px
+   :align: right
+
+If the bookmarks bar isn't already visible, you can show it by tapping the triangle in the top-lefthand corner of the editor.
+
+Technically, a bookmark is just a shortcut for opening a URL, but because Editorial has an extensive :ref:`URL scheme <editorial_urlscheme>` of its own, they can not only be used for visiting websites, but also for triggering workflows or opening often-used documents.
+
+Tap the bookmark icon to show your bookmarks as a list that you can rearrange. Tapping on the **+** button creates a new bookmark with an empty URL and title that you can fill in. While you can construct a bookmark URL by hand, the `Add Bookmark` panel also contains shortcuts for commonly-used ``editorial://`` URLs, for example to open the current document, or to run one of your workflows.
+
+.. tip::
+   You can edit an existing bookmark more quickly by just tapping and holding its title in the bookmarks bar.
+
+Keyboard Tips 
+^^^^^^^^^^^^^
+Editorial extends the standard iOS keyboard with an additional row of special characters that are often used in Markdown. Using it should be straightforward if you're familiar with the standard iOS keyboard, but the extra row has some additional functionality you might not be aware of:
+
+* By swiping left and right on the extended keyboard row, you can move the caret on the current line, which can make it easier to position it precisely.
+
+* Many keys can be used for multiple characters. Tap and hold one of them to show a popup, slide to the character you want, and release the finger. On the iPad, you can also perform a swipe-up gesture on such a key to insert the first alternative character, without having to wait for the popup.
+
+* When you have text selected, you can use the  ``(``, ``)``, ``[``, ``]``, ``"``, ````` and ``*`` keys to enclose the selection in a pair of matching characters. On the ``*`` key, you can also do a swipe-up gesture to enclose the selection in two asterisks on each side (making the selected text bold in Markdown documents).
+
+* Entering an opening bracket or parentheses automatically inserts the matching counterpart (this can be disabled in the editor settings).
+
+* iPad only: You can swipe up on the `Undo` key to `redo` changes (alternatively, you can tap and hold it to select from `Undo` and `Redo`).
+
+* iPad only: To quickly insert a footnote, simply tap the ``[`` key, then swipe up on the same key to insert the ``^`` character (the closing ``]`` is inserted automatically).
+
+* Tap on text in the editor with `two fingers` to quickly select an entire paragraph.
+
+Accessory Panel
+---------------
+
+You can reveal a collection of four different accessory panels with a left swipe gesture in the editor. These panels contain helpful additional tools that are not directly related to editing text. Depending on your preferences, you might not use all of them.
+
+Preview
+^^^^^^^^
+When you're editing a Markdown document, this panel shows an HTML preview of your current document. It is refreshed automatically when you show it.
+
+.. tip:: 
+   Using the :ref:`workflow-action-show-html` action in a :ref:`workflow <ios-workflows>`, you can also use this panel for showing dynamically-generated, custom HTML.
+
+Console
+^^^^^^^
+The console shows output from Python scripts (see :ref:`ios`) and can be used to enter Python commands interactively.
+
+Even if you're not interested in the programming part, you might find it useful as a calculator -- just try entering some mathematical expressions like ``12 * 4 + 5``. It is also used by the :ref:`workflow-action-console-output` workflow action.
+
+Help
+^^^^^
+You are viewing this panel right now. :)
+
+Browser
+^^^^^^^
+You can use the built-in browser for quick research, or as a helper in your workflows and scripts.
+
+In workflows, you can invoke it with the :ref:`workflow-action-open-url` action, and in Python scripts with the :mod:`webbrowser` module. You can also access the current URL, title, and text selection in the browser panel with built-in workflow variables.
+
+The browser is also used for opening web :ref:`bookmarks <editorial_editor>`. It has its own set of bookmarks that are separate from the editor's bookmarks bar, but otherwise function similarly. If your workflows use the browser feature, you might want to add a bookmark for triggering it in the browser's bookmarks menu. Javascript bookmarklets are also supported.
+
+
+Settings
+------------------------
+
+.. image:: editorial_settings_gear.png
+   :align: left
+   :width: 55px
+
+You can access Editorial's settings from the editor, using the gear button. On the iPhone, you'll find the settings button in the file browser. The settings are divided into multiple categories, described below.
+
+Dropbox
+^^^^^^^^^
+
+If you haven't already linked Editorial to your Dropbox account, you can do this from here. When your account is linked, additional settings will appear. You can change the folder Editorial syncs with, or reset the sync, if you're experiencing problems.
+
+General
+^^^^^^^^^
+
+* `Dark Theme` -- Turn this on if you prefer to work in a dark environment.
+* *Panel Gestures* -- This controls how the swipe gestures for switching between different panels work. By default, you can use them everywhere, but if you find yourself accidentally switching between panels, you might want them to work only from the left and right screen edges.
+* *Default File Format* -- When creating a new file, Editorial shows a format selection dialog (Markdown, Plain Text, TaskPaper). You can use this setting to skip the dialog and use a default format (you can use other formats by using a different extension when renaming a file).
+
+
+
+* `Restore Default Workflows & Snippets...` -- Use this if you accidentally deleted or modified the workflows that came with the app. Workflows that you added yourself will not be affected by this.
+
+Editor
+^^^^^^
+
+General
+"""""""
+
+* `Line Spacing` -- Controls the text editor's line spacing for both Markdown and plain text documents.
+* `Text Width` -- Controls the editor's margins -- wide text = small margins.
+* *Live Word Count* -- When this is turned on, you can see the word count while you're writing (in the top-right corner).
+* *Automatic Character Pairs* -- By default, Editorial automatically inserts closing parentheses etc. You can turn this off here.
+* `Check Spelling` / `Auto-Correction` / `Auto-Capitalization` -- These settings affect the main text editor's behavior.
+
+Markdown
+""""""""
+
+* `Syntax Highlighting` -- Turn this off to completely disable all syntax highlighting. This causes Markdown documents to behave like plain text documents.
+* `Text Font` -- Font settings for regular paragraph text.
+* `Heading Font` -- Font settings for headings -- All headings use the same font, but you can specify different sizes for different heading levels. You can also turn off the separator line after level-1 headings here.
+* `Code Font` -- Controls the monospace font that is used for code blocks and inline code.  The font size setting only affects code blocks, the size for inline code is automatically based on the regular text font size.
+* *Formatting Character Opacity* -- When syntax highlighting for Markdown is enabled, Editorial dims formatting characters like ``*``. This setting controls the amount by which these characters are dimmed. A setting of 1.0 makes them appear like regular text.
+* *File Extensions* -- This setting controls which file extensions are treated as Markdown (with syntax highlighting and HTML preview) by the editor.
+* *Default Extension* -- This is the file extension that is used for new Markdown documents.
+* *HTML Preview* -- These are various settings that control the behavior of the Markdown preview renderer. You can also choose to use full Multi-Markdown.
+* *Use Custom Template* -- Here you can edit the HTML template that is used for the Markdown preview, e.g. to style it similar to your website.
+
+Plain Text
+""""""""""
+
+* *Text Font* -- The font that is used in plain text documents.
+* *Additional Extensions* -- Custom file extensions that should be opened as plain text.
+* *Default Extension* -- The file extension that is used for new documents.
+
+TaskPaper
+"""""""""
+
+* *Color Labels* -- You can use these settings to map tags to color labels, for example to make important tasks stand out.
+* *Show Checkboxes* (iPad only) -- Controls the visibility of task checkboxes in the editor.
+* *Show Drag Handles* -- When turned on, the right margin of TaskPaper documents can be used to reorder tasks and notes.
+
+Workflows
+^^^^^^^^^
+
+* *Restore Default Workflows & Snippets...* -- This restores the workflows and snippets that came bundled with Editorial, in case you accidentally deleted them.
+* *Shared Workflows* -- Shows a list of workflows you've shared. You can also delete shared workflows from here.
+
+Snippets & Abbreviations
+""""""""""""""""""""""""
+
+* `Ignore Case` -- When this is enabled, an abbreviation like "WBR" is also expanded if you type "wbr" (or "Wbr", "wBR", etc.).
+* *Sound Effects* -- Controls whether a sound effect is played when a snippet is inserted.
+* `Suggest Completions` -- This setting controls when/if suggestions for snippets appear above the keyboard while typing (before you've completely typed an abbreviation). By default, snippets are suggested after the second letter in an abbreviation is typed.
+* `Enable TextExpander Snippets` -- If you have the TextExpander app installed, you can use its (shared) snippets, in addition to Editorial's own snippet system.
+* `Suggest TE Snippets While Typing` -- This setting will only be shown if TextExpander snippets are enabled. Turn this off if you want to expand TextExpander snippets, but don't want them to appear in the auto-completion list.
+
+
+The Editorial URL Scheme
+------------------------
+You can launch Editorial from other apps using the ``editorial://`` URL scheme. Apart from just launching the app, you can open an existing file in your library, create a new file with a given name, and run workflows.
+
+The general pattern of an Editorial URL is this:
+
+``editorial://<action>/<filename>?root=<dropbox|local>&selection=<from-to>&command=<command name>&input=<command input>``
+
+* `action` can be `open` or `new`
+* `filename` is either the name of the file to open (if `action` is `open`), or the name of the new file to create (if `action` is `new`). If a file with the given name already exists, a numeric suffix is automatically appended.
+* `root` can be `dropbox` or `local`. If omitted, `local` is assumed.
+* `command` optionally specifies an editor command (workflow) by name that should be executed after opening or creating the file. If there are multiple workflows with the same name, the first one is executed. You can also leave out the `action` and `filename` parameters to execute a command without opening or creating a file, for example:
+    
+    ``editorial://?command=My%20Command``.
+
+* `input` optionally specifies the input for the first action in the workflow that is run with the `command` parameter.
+* `selection` is an optional parameter for setting the initial selected text range when opening or creating a file. It is specified as ``from-to``, for example ``0-10`` to select the first 10 characters. The ``to`` part can be omitted if you don't want to select any text, but scroll to a specific position. If you want to scroll to the end of the text, you can just use a very large number for ``from``. Selections that go beyond the length of the text will automatically be capped.
+
+In addition to the app-specific parameters above, Editorial also supports the x-callback-url standard. x-callback parameters only have an effect when the `command` parameter is used to run a workflow.
+
+* `x-success` Specifies a URL to open when the workflow finishes without errors. If the URL contains the placeholder ``[[output]]``, it is replaced with the (URL-escaped) output of the last action in the workflow.
+* `x-cancel` This URL is opened when a workflow is cancelled. No additional parameters are appended to this URL.
+* `x-error` If this parameter is used and the workflow generates an error, the error message is not shown. Instead, the given URL is opened with an `errorMessage` and `errorCode` parameter appended. `errorCode` will usually just be -1, it is just included to ensure compatibility with other apps that may rely on a value being there.
+
+Version-specific URL Schemes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Starting with Editorial 1.1, there are additional URL schemes for detecting the installed version from other apps. For example, with version 1.1, the additional schemes ``editorial-v100://`` and ``editorial-v110://`` are supported. A different app could check for these schemes to detect if a specific update is installed, in case it depends on features that weren't available in older versions.
+
+The behavior of the version-specific schemes is equivalent to the default (``editorial://``) scheme.

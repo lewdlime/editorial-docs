@@ -1,0 +1,173 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Building Workflows &mdash; Editorial Documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Editorial Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Editorial Documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0">
+    
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python')[i];
+            return codeBlock.innerText;
+        }
+        
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+    
+ 
+
+  </head>
+  <body ontouchstart="">
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="http://omz-software.com/editorial"><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -4px; margin-right: 4px;"/></a></li>
+        <li><a href="../index.html">Editorial Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="building-workflows">
+<span id="ios-workflows"></span><h1>Building Workflows<a class="headerlink" href="#building-workflows" title="Permalink to this headline">¶</a></h1>
+<img align="right" alt="../_images/workflows.png" class="align-right" src="../_images/workflows.png" style="width: 337px;" />
+<p>Workflows allow you to extend Editorial with your own commands. Each workflow is a sequence of simple steps (&#8220;actions&#8221;) that are executed sequentially. There are lots of different actions that do all kinds of things &#8211; converting Markdown to HTML, searching for regular expressions, showing dialogs and email sheets, playing sound effects, setting the clipboard contents, and much more.</p>
+<p>A couple of workflows are bundled with the app &#8211; looking at how they were built is one of the best ways to get started with learning how to make your own. If you&#8217;re new to this, try changing some simple things in an existing workflow at first &#8211; once you&#8217;re comfortable with that, you can easily build your own workflows from scratch.</p>
+<p>Tap on the info button next to a workflow in the list to see details and start editing. You can also tap on the <em>Edit</em> button to rearrange the list, or to delete workflows. If you accidentally deleted a bundled workflow, you can get it back by selecting &#8220;Restore Default Workflows &amp; Snippets&#8221; in the <a class="reference internal" href="../ios/editorial_settings.html#editorial-settings"><em>settings</em></a>.</p>
+<p>You don&#8217;t need to know how to write code for building workflows, but if you do, you can create <a class="reference internal" href="special/action-custom.html#workflow-action-custom"><em>custom actions</em></a> and <a class="reference internal" href="special/action-run-script.html#workflow-action-run-script"><em>script actions</em></a> with Python that make your toolbox even more powerful.</p>
+</div>
+<div class="section" id="getting-started-workflow-actions">
+<span id="ios-workflows-tutorial"></span><h1>Getting Started &#8211; Workflow Actions<a class="headerlink" href="#getting-started-workflow-actions" title="Permalink to this headline">¶</a></h1>
+<p>To create a new workflow, open the workflow list from the editor (wrench icon), and tap the <strong>+</strong> button. If you want to edit an existing workflow or see how it was built, you can tap the info button next to it and select &#8220;Edit Workflow&#8221;.</p>
+<p>You&#8217;ll be presented with an empty canvas for your actions. Tap the <strong>+</strong> button at the top to add an action from the <a class="reference internal" href="reference.html#ios-workflows-reference"><em>library</em></a>.</p>
+<p>Tapping on the title of an action allows you to configure its <em>parameters</em>. The parameters of an action are used to customize its behavior, for example, set the title of an alert, text that should be inserted in the editor, and so forth. Each type of action has a different set of parameters that is explained in detail in the <a class="reference internal" href="reference.html#ios-workflows-reference"><em>action reference</em></a>. You can also get to the documentation of a specific action directly from the workflow editor: Either tap one of the (?) buttons in the library (while adding an action), or use the <em>Help</em> button in an action&#8217;s options menu (on the iPad, tap the (▼) button, on the iPhone, tap and hold an action&#8217;s title).</p>
+<p>The actions in a workflow are executed sequentially, and each action passes its output (a piece of text) as input to the next action, which can then do something with it. For example, one action might produce the currently selected text as output, the next action could convert its input (the selected text) to uppercase, passing it to the next action that might copy it to the clipboard.</p>
+<p>Actions that do not actually <cite>process</cite> their input will often simply pass it to the next action.</p>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<img align="right" alt="../_images/variable_key.png" class="align-right" src="../_images/variable_key.png" style="width: 155px;" />
+<p>In addition to this simple input/output mechanism, there are <em>variables</em> that can be used as placeholders in any text parameter. You can combine regular text with variables, much like a template. To insert a variable, simply tap one of the buttons on the extended keyboard. When an action is run, all the variables are expanded to their actual values. For a complete overview of the built-in variables, please see <a class="reference internal" href="variables.html#ios-workflows-variables"><em>this reference</em></a>.</p>
+<p>You can also define your own variables for intermediate results by using the <a class="reference internal" href="special/action-set-variable.html#workflow-action-set-variable"><em>Set Variable</em></a> action. For example, you might want to store the selected text in a variable before modifying the selection.</p>
+</div>
+<div class="section" id="action-blocks">
+<h2>Action Blocks<a class="headerlink" href="#action-blocks" title="Permalink to this headline">¶</a></h2>
+<img align="right" alt="../_images/action_blocks.png" class="align-right" src="../_images/action_blocks.png" style="width: 215px;" />
+<p>There are two kinds of special <em>block</em> actions: <a class="reference internal" href="special/action-condition.html#workflow-action-condition"><em>Conditional Block (If...Then...)</em></a> and <a class="reference internal" href="special/action-repeat.html#workflow-action-repeat"><em>Repeat Block...</em></a>. Each of them consists of two parts. You drag other actions between those parts to create a block of actions that is controlled by the <em>If</em> or <em>Repeat</em> action that contains it. You can also hide the actions that are part of the block by tapping the <em>Hide Actions</em> button. This also allows you to save an entire block with multiple actions as a preset (see below), or to drag an entire block of actions at once (you can also create nested blocks this way).</p>
+<p>A conditional (if-then) block is only executed when some condition is true. You can use this to verify requirements of your workflow, e.g. check the file extension of the current document. If the condition is not met, the block is simply skipped.</p>
+<p>A repeat block executes a sequence of actions for either every line in the input, or every match of a regular expression. The output of the entire block is the combined output of each repetition. For example, if each iteration of the block adds an asterisk before the input line, the result of the entire block would be a bulleted list.</p>
+</div>
+<div class="section" id="options-and-presets">
+<h2>Options and Presets<a class="headerlink" href="#options-and-presets" title="Permalink to this headline">¶</a></h2>
+<img align="right" alt="../_images/action_options.png" class="align-right" src="../_images/action_options.png" style="width: 44px;" />
+<p>In addition to parameters, each action has some settings for controlling its behavior and how it appears in the list. On the iPad, you can access these options by tapping the (▼) button next to an action&#8217;s title. On the iPhone, you have to tap and hold the action&#8217;s title instead.</p>
+<p>To make your workflow easier to read, you can set a <em>custom title</em> for each action. This can be particularly helpful as a comment for complex actions that use regular expressions or scripts. If you want to make an action stand out in the workflow editor, you can also assign a color label to it.</p>
+<p>You can also save an action as a <em>preset</em> from the options menu. This allows you to reuse an action in other workflows, without having to configure all its parameters again. You&#8217;ll typically want to set a custom title for presets, but you can also use this as a simple list of favorite actions.</p>
+<p>Finally, there is a <em>Pause Before Running</em> option in the options menu. This can be helpful for &#8220;stepping through&#8221; a workflow, and to inspect an action&#8217;s parameters with all the variables expanded. It can also be useful to interrupt a workflow that you want to continue manually, for example after having opened a differrent document. In this case, you can turn off the &#8221;...Show Parameters&#8221; option. While a workflow is paused, the rest of the app remains usable. Please note that this option is only available in the iPad version of Editorial.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="reference.html#ios-workflows-reference"><em>Workflow Actions &#8211; Reference</em></a></li>
+<li><a class="reference internal" href="variables.html#ios-workflows-variables"><em>Built-in Variables &#8211; Reference</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.  
+    <a href="http://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on May 28, 2015.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+
+  </body>
+</html>

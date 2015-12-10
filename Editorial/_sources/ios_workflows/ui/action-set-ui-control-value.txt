@@ -1,0 +1,37 @@
+.. _workflow-action-set-ui-control-value:
+
+====================
+Set UI Control Value
+====================
+
+*Sets the text value of a UI control*
+
+This action changes the value/text of a specific control within a custom UI, for example the text of a label, or the numeric value of a slider. How the value is interpreted depends on the type of the control:
+
+* **Label** -- The text of the label
+* **Button** -- The title of the button
+* **Slider** -- The value of the slider (between 0.0 and 1.0)
+* **Switch** -- "ON", "YES", or "TRUE" turn the switch on, all other values turn it off
+* **Segmented Control** -- The title of the segment that should be selected (if there is no segment with this title, nothing happens)
+* **Text Field** -- The content of the text field
+* **Text View** -- The content of the text view
+* **Web View** -- Can either be a URL (http[s], file) or HTML text
+* **Table View** -- Row titles (one per line)
+* **Image View** -- The name of a built-in image or the URL of a web image
+
+Note that this action is only available within an embedded workflow of a :ref:`workflow-action-custom-ui` action.
+
+* **Input:** Can be used in the *Value* parameter
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **View Name:** The name of the control that you want to set the value of.
+* **Value:** The value to be set (see above for details of how this affects the different control types). 
+
+See Also
+--------
+
+* :ref:`workflow-action-custom-ui`
+

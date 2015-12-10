@@ -1,0 +1,26 @@
+.. _workflow-action-evaluate-javascript-in-webview:
+
+=============================
+Evaluate JavaScript (WebView)
+=============================
+
+*Evalutates JavaScript in a WebView*
+
+This action is similar to :ref:`workflow-action-evaluate-javascript`, but instead of the built-in browser, the JavaScript is evaluated in a web view of a :ref:`workflow-action-custom-ui`.
+
+Note that this action is only available within an embedded workflow of a :ref:`workflow-action-custom-ui` action.
+
+* **Input:** Not used
+* **Output:** The string value that resulted from evaluating the script
+
+Parameters
+----------
+
+* **Web View:** The name of the web view where the script should be evaluated.
+* **Script:** JavaScript source code to evaluate.
+
+See Also
+--------
+
+* :ref:`workflow-action-custom-ui`
+* :ref:`workflow-action-set-ui-control-value`

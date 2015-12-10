@@ -1,0 +1,172 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Editorial URL Schemes &mdash; Editorial Documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Editorial Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Editorial Documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0">
+    
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python')[i];
+            return codeBlock.innerText;
+        }
+        
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+    
+ 
+
+  </head>
+  <body ontouchstart="">
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="http://omz-software.com/editorial"><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -4px; margin-right: 4px;"/></a></li>
+        <li><a href="../index.html">Editorial Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="editorial-url-schemes">
+<span id="using-editorial"></span><h1>Editorial URL Schemes<a class="headerlink" href="#editorial-url-schemes" title="Permalink to this headline">¶</a></h1>
+<p>You can launch Editorial from other apps using the <tt class="docutils literal"><span class="pre">editorial://</span></tt> URL scheme. Apart from just launching the app, you can open an existing file in your library, create a new file with a given name, and run workflows.</p>
+<p>The general pattern of an Editorial URL is this:</p>
+<p><tt class="docutils literal"><span class="pre">editorial://&lt;action&gt;/&lt;filename&gt;?root=&lt;dropbox|local&gt;&amp;selection=&lt;from-to&gt;&amp;command=&lt;command</span> <span class="pre">name&gt;&amp;input=&lt;command</span> <span class="pre">input&gt;</span></tt></p>
+<ul>
+<li><p class="first"><cite>action</cite> can be <cite>open</cite> or <cite>new</cite></p>
+</li>
+<li><p class="first"><cite>filename</cite> is either the name of the file to open (if <cite>action</cite> is <cite>open</cite>), or the name of the new file to create (if <cite>action</cite> is <cite>new</cite>). If a file with the given name already exists, a numeric suffix is automatically appended.</p>
+</li>
+<li><p class="first"><cite>root</cite> can be <cite>dropbox</cite> or <cite>local</cite>. If omitted, <cite>local</cite> is assumed.</p>
+</li>
+<li><p class="first"><cite>command</cite> optionally specifies an editor command (workflow) by name that should be executed after opening or creating the file. If there are multiple workflows with the same name, the first one is executed. You can also leave out the <cite>action</cite> and <cite>filename</cite> parameters to execute a command without opening or creating a file, for example:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">editorial://?command=My%20Command</span></tt>.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><cite>input</cite> optionally specifies the input for the first action in the workflow that is run with the <cite>command</cite> parameter.</p>
+</li>
+<li><p class="first"><cite>selection</cite> is an optional parameter for setting the initial selected text range when opening or creating a file. It is specified as <tt class="docutils literal"><span class="pre">from-to</span></tt>, for example <tt class="docutils literal"><span class="pre">0-10</span></tt> to select the first 10 characters. The <tt class="docutils literal"><span class="pre">to</span></tt> part can be omitted if you don&#8217;t want to select any text, but scroll to a specific position. If you want to scroll to the end of the text, you can just use a very large number for <tt class="docutils literal"><span class="pre">from</span></tt>. Selections that go beyond the length of the text will automatically be capped.</p>
+</li>
+</ul>
+<p>In addition to the app-specific parameters above, Editorial also supports the x-callback-url standard. x-callback parameters only have an effect when the <cite>command</cite> parameter is used to run a workflow.</p>
+<ul class="simple">
+<li><cite>x-success</cite> Specifies a URL to open when the workflow finishes without errors. If the URL contains the placeholder <tt class="docutils literal"><span class="pre">[[output]]</span></tt>, it is replaced with the (URL-escaped) output of the last action in the workflow.</li>
+<li><cite>x-cancel</cite> This URL is opened when a workflow is cancelled. No additional parameters are appended to this URL.</li>
+<li><cite>x-error</cite> If this parameter is used and the workflow generates an error, the error message is not shown. Instead, the given URL is opened with an <cite>errorMessage</cite> and <cite>errorCode</cite> parameter appended. <cite>errorCode</cite> will usually just be -1, it is just included to ensure compatibility with other apps that may rely on a value being there.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If Editorial is not already running when a URL is opened, the normal behavior of restoring the previous document is skipped. This can be useful if you encounter problems launching the app. An exception is the URL <tt class="docutils literal"><span class="pre">editorial://back</span></tt> &#8211; you can use this if you just want to open Editorial, without doing anything else.</p>
+</div>
+<div class="section" id="version-specific-url-schemes">
+<h2>Version-specific URL Schemes<a class="headerlink" href="#version-specific-url-schemes" title="Permalink to this headline">¶</a></h2>
+<p>Starting with Editorial 1.1, there are additional URL schemes for detecting the installed version from other apps. For example, with version 1.1, the additional schemes <tt class="docutils literal"><span class="pre">editorial-v100://</span></tt>, <tt class="docutils literal"><span class="pre">editorial-v110://</span></tt> and <tt class="docutils literal"><span class="pre">editorial-v120://</span></tt> are supported. A different app could check for these schemes to detect if a specific update is installed, in case it depends on features that weren&#8217;t available in older versions.</p>
+<p>The behavior of the version-specific schemes is equivalent to the default (<tt class="docutils literal"><span class="pre">editorial://</span></tt>) scheme.</p>
+</div>
+<div class="section" id="web-browser-url-scheme">
+<h2>Web Browser URL Scheme<a class="headerlink" href="#web-browser-url-scheme" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the URL schemes above, Editorial supports the <tt class="docutils literal"><span class="pre">editorial-http://</span></tt> and <tt class="docutils literal"><span class="pre">editorial-https://</span></tt> schemes to support opening web pages in the in-app browser from other apps.</p>
+<p>To use this you can simply prepend <tt class="docutils literal"><span class="pre">editorial-</span></tt> to a regular web URL, e.g. <tt class="docutils literal"><span class="pre">editorial-http://apple.com</span></tt> or <tt class="docutils literal"><span class="pre">editorial-https://google.com</span></tt>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.  
+    <a href="http://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on May 28, 2015.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+
+  </body>
+</html>

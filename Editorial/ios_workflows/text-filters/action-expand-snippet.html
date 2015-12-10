@@ -1,0 +1,161 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Expand Snippet &mdash; Editorial Documentation</title>
+    <link rel="stylesheet" href="../../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.7.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Editorial Documentation"
+          href="../../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="top" title="Editorial Documentation" href="../../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../../_static/py.png" />
+    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0">
+    
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python')[i];
+            return codeBlock.innerText;
+        }
+        
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+    
+ 
+
+  </head>
+  <body ontouchstart="">
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="http://omz-software.com/editorial"><img src="../../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -4px; margin-right: 4px;"/></a></li>
+        <li><a href="../../index.html">Editorial Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="expand-snippet">
+<span id="workflow-action-expand-snippet"></span><h1>Expand Snippet<a class="headerlink" href="#expand-snippet" title="Permalink to this headline">¶</a></h1>
+<p><em>Expands an abbreviation or TextExpander snippet</em></p>
+<p>This action can either use Editorial&#8217;s built-in snippet/abbreviation system or TextExpander snippet syntax.</p>
+<p>In the <cite>Abbreviation</cite> mode, you can enter any snippet abbreviation and it will be expanded to the full snippet. For example, you might enter &#8220;tyvm&#8221; in the text field, and the output of the action would be &#8220;Thank you very much&#8221; (if you have such a snippet).</p>
+<p>In the second mode, <em>TextExpander Snippet Syntax</em>, you can enter the actual text of the snippet (not the abbreviation), using TextExpander&#8217;s macro syntax, for example <tt class="docutils literal"><span class="pre">%clipboard</span></tt> or the various date macros (<tt class="docutils literal"><span class="pre">%Y-%m-%d</span></tt>...). This also works with fill-ins and date math. For a full reference of TextExpander&#8217;s snippet syntax, please refer to these pages in the TextExpander documentation:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.smilesoftware.com/help/TextExpander/specials.html">Advanced Snippet Functions: Macros</a></li>
+<li><a class="reference external" href="http://www.smilesoftware.com/help/TextExpander/datetime.html">Date, Time, and Math Macros</a></li>
+<li><a class="reference external" href="http://www.smilesoftware.com/help/TextExpander/fillins.html">Creating and Using Fill-In Fields</a></li>
+</ul>
+<p>Please note that some advanced macros are not supported in Editorial, specifically key presses (e.g. <tt class="docutils literal"><span class="pre">%key:esc%</span></tt>) and anything that uses AppleScript or Shell scripts (these only work on the Mac). On the other hand, fill-ins can actually be more powerful in Editorial than in TextExpander because you can combine them with workflow variables. For example, you could set the default text in a fill-in field to the contents of the clipboard, which wouldn&#8217;t be possible with a pure TextExpander snippet.</p>
+<p>It is <em>not</em> necessary that you have TextExpander touch installed for the snippet syntax to work.</p>
+<p>TextExpander is a registered trademark of Smile. You can learn more about TextExpander here: <a class="reference external" href="http://smilesoftware.com/TextExpander/touch/index.html">http://smilesoftware.com/TextExpander/touch/index.html</a></p>
+<ul class="simple">
+<li><strong>Input:</strong> Can be used in the <cite>snippet</cite> field</li>
+<li><strong>Output:</strong> The expanded snippet (empty if it couldn&#8217;t be expanded)</li>
+</ul>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Expand:</strong> Can be either <em>Abbreviation</em> or <em>TextExpander Snippet Syntax</em> (see above for details).</li>
+<li><strong>Insert in Editor:</strong> When this option is turned on, the expanded snippet is not only passed to the next action, but also inserted in the editor (like it would be when expanding the snippet by typing). Using TextExpander macros to set the cursor position or selected range (e.g. <tt class="docutils literal"><span class="pre">%|select</span> <span class="pre">me%\</span></tt>) will only have an effect if the snippet is inserted. Following actions only receive the actual text of the expanded snippet, without any selection information.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../editor/action-replace-selected-text.html#workflow-action-replace-selected-text"><em>Replace Selected Text</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.  
+    <a href="http://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on May 28, 2015.
+    <a href="../../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+
+  </body>
+</html>

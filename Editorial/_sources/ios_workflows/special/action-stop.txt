@@ -1,0 +1,25 @@
+.. _workflow-action-stop-workflow:
+
+=================
+Stop
+=================
+
+*Stops the workflow or the inner-most repeat block*
+
+Stopping a workflow or repetition is mostly useful in combination with a :ref:`workflow-action-condition`, but you could also insert it somewhere in your workflow to test just the first part of it.
+
+* **Input:** Not used
+* **Output:** N/A
+
+Parameters
+----------
+
+* **Stop:** What to stop -- can be `This Workflow` or `Repeat Block`
+* **Show HUD Alert:** Show an HUD-style alert with a short message to indicate that the workflow or repeat block was stopped
+* **Message:** The message for the optional HUD alert (default is "Stopped")
+
+See Also
+--------
+
+* :ref:`workflow-action-condition`
+* :ref:`workflow-action-repeat`

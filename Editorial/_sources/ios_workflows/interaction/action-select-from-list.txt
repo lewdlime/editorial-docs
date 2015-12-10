@@ -1,0 +1,26 @@
+.. _workflow-action-select-from-list:
+
+==================
+Select from List
+==================
+
+*Presents a dialog with a list of values to select from*
+
+The options are presented as a scrollable list of lines from which one or more can be selected. The list can be filtered by searching, and the selected line(s) are passed as output to the next action.
+
+If a line contains a tab character, the output value for that line will be everything after the last tab. For example, a line that contains "Apple <tab>A" would be shown as just "Apple", but output "A" when it's selected.
+
+* **Input:** Can be used in the `List (Lines)` parameter
+* **Output:** The selected line(s)
+
+Parameters
+----------
+
+* **List (Lines):** The list of lines to choose from
+* **Multiple Selection:** If enabled, multiple items can be selected from the list. The output will be the concatenation of all selected lines in the order in which they appear in the list.
+* **Show in Popover:** A different presentation style for the list dialog. Tapping outside the popover has the same effect as using the *Cancel* button in the default presentation style.
+
+See Also
+--------
+
+* :ref:`workflow-action-request-text-input`

@@ -1,0 +1,284 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Writing Markdown &mdash; Editorial Documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Editorial Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Editorial Documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0">
+    
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python')[i];
+            return codeBlock.innerText;
+        }
+        
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+    
+ 
+
+  </head>
+  <body ontouchstart="">
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="http://omz-software.com/editorial"><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -4px; margin-right: 4px;"/></a></li>
+        <li><a href="../index.html">Editorial Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="writing-markdown">
+<span id="editorial-writing-markdown"></span><h1>Writing Markdown<a class="headerlink" href="#writing-markdown" title="Permalink to this headline">¶</a></h1>
+<p>Editorial is optimized for writing Markdown, a popular plain text format that is very readable, and works well for writing on the web.</p>
+<p>In the words of <a class="reference external" href="http://daringfireball.net/projects/markdown">John Gruber</a>, the inventor of Markdown:</p>
+<blockquote>
+<div>The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been influenced by several existing text-to-HTML filters, the single biggest source of inspiration for Markdown’s syntax is the format of plain text email.</div></blockquote>
+<p>The following is just a quick overview of how you can format your text using Markdown. For all the details, please refer to the <a class="reference external" href="http://daringfireball.net/projects/markdown/syntax">syntax reference</a> on the official Markdown project page.</p>
+<div class="section" id="markdown-primer">
+<span id="editorial-markdown-primer"></span><h2>Markdown Primer<a class="headerlink" href="#markdown-primer" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="paragraphs">
+<h3>Paragraphs<a class="headerlink" href="#paragraphs" title="Permalink to this headline">¶</a></h3>
+<p>Paragraphs in Markdown are separated by blank lines. A single line break does not result in a new paragraph.</p>
+</div>
+<div class="section" id="headers">
+<h3>Headers<a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h3>
+<p>Headers are marked with one or more hash characters. Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># This is a Level 1 Heading</span>
+
+<span class="c">## This is a Level 2 Heading</span>
+</pre></div>
+</div>
+<p>Markdown also supports using &#8220;Setext-style&#8221; headers (underlining the header with <tt class="docutils literal"><span class="pre">===</span></tt> or <tt class="docutils literal"><span class="pre">---</span></tt>), but this is currently not supported by Editorial&#8217;s inline preview. It does work in the full HTML preview however.</p>
+</div>
+<div class="section" id="blockquotes">
+<h3>Blockquotes<a class="headerlink" href="#blockquotes" title="Permalink to this headline">¶</a></h3>
+<p>Blockquotes are indicated by a leading <tt class="docutils literal"><span class="pre">&gt;</span></tt> character, like in plain text email. Example:</p>
+<div class="highlight-python"><pre>&gt; Any intelligent fool can make things bigger, more complex, and more violent.
+&gt; It takes a touch of genius -- and a lot of courage -- to move in the
+&gt; opposite direction.
+&gt; – Albert Einstein</pre>
+</div>
+</div>
+<div class="section" id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<p>You can use asterisks, plus symbols or hyphens as list markers for unordered lists. Example:</p>
+<div class="highlight-python"><pre>* Apple
+* Banana
+* Cherry</pre>
+</div>
+<p>Ordered lists use numbers followed by periods. Example:</p>
+<div class="highlight-python"><pre>1. Red
+2. Green
+3. Blue</pre>
+</div>
+<p>The actual numbers are not important for the output.</p>
+</div>
+<div class="section" id="code">
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
+<p>Code blocks can be formatted by indenting a paragraph with 4 or more spaces (or one tab). Example:</p>
+<div class="highlight-python"><pre>This is a normal paragraph.
+
+    This is a code block.</pre>
+</div>
+<p>The inline preview uses a <tt class="docutils literal"><span class="pre">monospace</span></tt> font for code blocks.</p>
+<p>Inline code is enclosed in a pair of <em>backtick</em> characters. Example:</p>
+<div class="highlight-python"><pre>You can use the `markdown` or `markdown2` modules to parse Markdown in Python.</pre>
+</div>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<p>There are two styles of links in Markdown: <em>inline</em> and <em>reference</em>. The link text is always enclosed in square brackets. Inline links contain the URL in parentheses, directly after the title:</p>
+<div class="highlight-python"><pre>[Inline Link](http://example.com)</pre>
+</div>
+<p>A reference link uses a second set of square brackets and an arbitrary identifier instead of a URL. The identifier can be defined anywhere else in the document:</p>
+<div class="highlight-python"><pre>[Reference Link][1]
+
+Some other text
+
+[1]: http://example.com</pre>
+</div>
+</div>
+<div class="section" id="emphasis">
+<h3>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this headline">¶</a></h3>
+<p>Markdown uses one, two, or three asterisks (*) or underscores (_) for emphasizing text. Example:</p>
+<div class="highlight-python"><pre>*This is italic*
+**This is bold**
+***This is bold and italic***</pre>
+</div>
+</div>
+<div class="section" id="images">
+<h3>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h3>
+<p>Images have the same syntax as links, except that an exclamation mark is added. Example:</p>
+<div class="highlight-python"><pre>![Alt text](http://example.com/image.png)</pre>
+</div>
+</div>
+</div>
+<div class="section" id="supported-markdown-extensions">
+<span id="editorial-markdown-extensions"></span><h2>Supported Markdown Extensions<a class="headerlink" href="#supported-markdown-extensions" title="Permalink to this headline">¶</a></h2>
+<p>Editorial supports a couple of Markdown extensions (&#8220;dialects&#8221;) in its HTML preview, some of which are also visible directly in the editor. In the <a class="reference internal" href="editorial_settings.html#editorial-settings"><em>settings</em></a>, you can either turn on these extensions separately, or switch to Multi-Markdown mode, which supports most of the extensions out of the box.</p>
+<div class="section" id="footnotes">
+<h3>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h3>
+<p>Footnotes are very similar to reference links, i.e. the definition of a footnote is usually put at the bottom of the text or section.:</p>
+<div class="highlight-python"><pre>This is a footnote[^1]
+
+...Other text
+
+[^1]: Footnote definition</pre>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you use the default set of snippets, you can insert a footnote by typing <tt class="docutils literal"><span class="pre">ffn</span></tt>, and a footnote definition with <tt class="docutils literal"><span class="pre">ffd</span></tt>. Selecting a footnote in the editor also gives you an option to jump to the definition (Select &#8220;Go to Footnote&#8221; in the Copy/Paste menu).</p>
+</div>
+</div>
+<div class="section" id="auto-links">
+<h3>Auto-Links<a class="headerlink" href="#auto-links" title="Permalink to this headline">¶</a></h3>
+<p>When enabled, things that look like URLs will be turned into clickable links, without having to be enclosed with angle brackets.</p>
+</div>
+<div class="section" id="strikethrough">
+<h3>Strikethrough<a class="headerlink" href="#strikethrough" title="Permalink to this headline">¶</a></h3>
+<p>Similar to <tt class="docutils literal"><span class="pre">**bold**</span></tt> and <tt class="docutils literal"><span class="pre">*italic*</span></tt>, you can strike out text by surrounding it with two tilde characters on each side: <tt class="docutils literal"><span class="pre">~~example~~</span></tt></p>
+</div>
+<div class="section" id="superscript">
+<h3>Superscript<a class="headerlink" href="#superscript" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="tables">
+<h3>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h3>
+<p>The syntax for tables basically looks like ASCII art:</p>
+<div class="highlight-python"><pre>First Header  | Second Header | Third Header |
+ ------------ | :-----------: | -----------: |
+Cell          |   *Cell*      |      Cell    |
+Cell          |   **Cell**    |      Cell    |</pre>
+</div>
+<p>Table cells are separated by pipe (<tt class="docutils literal"><span class="pre">|</span></tt>) characters, the colons below the table headers indicate the column&#8217;s alignment. See the <a class="reference external" href="https://github.com/fletcher/MultiMarkdown/wiki/MultiMarkdown-Syntax-Guide">MultiMarkdown Syntax Guide</a> for more details.</p>
+</div>
+<div class="section" id="smart-quotes">
+<h3>Smart Quotes<a class="headerlink" href="#smart-quotes" title="Permalink to this headline">¶</a></h3>
+<p>When enabled, straight quotation marks are automatically converted to typographic (curly) quotation marks.</p>
+</div>
+<div class="section" id="metadata-headers">
+<h3>Metadata Headers<a class="headerlink" href="#metadata-headers" title="Permalink to this headline">¶</a></h3>
+<p>To use metadata, simply add key-value pairs to the top of a Markdown file:</p>
+<div class="highlight-python"><pre>Title:  My Article
+Author: John Doe
+Date:   July 25, 2005</pre>
+</div>
+<p>When the <cite>Metadata Headers</cite> option is enabled, these headers will not be visible in the HTML preview.</p>
+</div>
+</div>
+<div class="section" id="folding-sections">
+<h2>Folding Sections<a class="headerlink" href="#folding-sections" title="Permalink to this headline">¶</a></h2>
+<p>You can quickly hide the contents of a section by tapping the triangle next to the header.</p>
+<p>When a section is folded, the number of hidden words is shown next to it. You can quickly unfold all sections by tapping the gray triangle in the top-left corner.</p>
+<p>The header level (number of <tt class="docutils literal"><span class="pre">#</span></tt>) determines how much is folded, e.g. folding a level-1 header also hides all level-2+ headers below it, up to the next level-1 header.</p>
+</div>
+<div class="section" id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Some of the built-in snippets are very useful to make editing Markdown more efficient. For example, you can simply type <tt class="docutils literal"><span class="pre">llnk</span></tt> to insert a link with the cursor correctly positioned to write its title.</li>
+<li>If you paste a lot of text from the clipboard, try typing <tt class="docutils literal"><span class="pre">ppp</span></tt> instead of using the standard editing menu &#8211; it can be a lot faster.</li>
+<li>When you select a footnote while editing, you can jump to its definition from the editing menu (if the definition doesn&#8217;t exist yet, this is also a quick way of creating it).</li>
+<li>When you have a word selected and tap the <tt class="docutils literal"><span class="pre">*</span></tt> key, the text is automatically enclosed in a pair of asterisks (which makes it italic or bold) &#8211; the same applies to parentheses.</li>
+<li>While editing lists, you might find the &#8220;Arrange Paragraphs&#8221; mode useful: It allows you to move lines via drag&#8217;n&#8217;drop &#8211; you can enable this in the quick settings (&#8220;Aa&#8221; button).</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.  
+    <a href="http://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on May 28, 2015.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.. _workflow-action-search-web:
+
+=================
+Search Web
+=================
+
+*Starts a web search in the built-in browser*
+
+This action starts a simple web search in the built-in browser. If you want to use alternative search engines, you can use the :ref:`workflow-action-open-url` action instead (with a variable for the search text).
+
+* **Input:** Can be used in the `Search for` parameter
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **Search for:** The text that is put into the search box
+
+See Also
+--------
+
+* :ref:`workflow-action-open-url`
+

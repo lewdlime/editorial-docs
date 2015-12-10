@@ -1,0 +1,22 @@
+.. _workflow-action-get-bookmark-url:
+
+=================
+Get Bookmark URL
+=================
+
+*Creates an editorial:// bookmark URL for the current document*
+
+The output URL can be used in other apps on the same device to open Editorial with this document. You can also use this within Editorial, for example with the :ref:`workflow-action-open-url` action or in custom HTML that is shown with the :ref:`workflow-action-show-html` action.
+
+* **Input:** N/A
+* **Output:** The bookmark URL, e.g. `editorial://open/Hello.txt`
+
+Parameters
+----------
+
+* **Include Selected Range:** When enabled, the bookmark URL includes the range of the currently selected text. This can be used to bookmark a specific part of a document.
+
+See Also
+--------
+
+* :ref:`workflow-action-open-url`

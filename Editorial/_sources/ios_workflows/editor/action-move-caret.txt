@@ -1,0 +1,25 @@
+.. _workflow-action-move-caret:
+
+================
+Move Caret
+================
+
+*Moves the insertion caret in the text editor*
+
+This action is similar to the :ref:`workflow-action-extend-selection` action, but the result is always an empty selection.
+
+* **Input:** Any
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **Direction:** The direction in which the caret is moved. Can be `Backward` or `Forward`. If text is selected, `forward` moves the caret from the `end` of that selection and `backward` from the `start`. Additionally, you can specify how far the caret should be moved. This can be the start/end of the document, the start/end of selected line(s) or a number of characters.
+   
+* **Number of Characters:** If the `number of characters` option is used above, this parameter specifies by how many characters the caret should be moved. This field can contain either a plain number, or a mathematical expression like ``5 + 2``. You can also use variables here. If the number is negative, this has the same effect as using the opposite direction with a positive number.
+
+
+See Also
+--------
+
+* :ref:`workflow-action-extend-selection`

@@ -1,0 +1,298 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>editor — Functions for scripting Editorial’s text editor &mdash; Editorial Documentation</title>
+    <link rel="stylesheet" href="../_static/pythonista.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.7.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Editorial Documentation"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Editorial Documentation" href="../index.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <meta name = "viewport" content = "width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0">
+    
+    <script type="text/javascript">
+        var getTextForSample = function(i) {
+            codeBlock = document.getElementsByClassName('highlight-python')[i];
+            return codeBlock.innerText;
+        }
+        
+        var copySample = function (i) {
+            window.location.href = '/__pythonista_copy__/' + encodeURI(getTextForSample(i));
+        }
+        
+        var openSample = function (i) {
+            window.location.href = '/__pythonista_open__/' + encodeURI(getTextForSample(i));
+        }
+        
+        //Source: http://ejohn.org/blog/partial-functions-in-javascript/
+        Function.prototype.partial = function() {
+        	var fn = this,
+        		args = Array.prototype.slice.call(arguments);
+        	return function() {
+        		var arg = 0;
+        		for (var i = 0; i < args.length && arg < arguments.length; i++)
+        		if (args[i] === undefined) args[i] = arguments[arg++];
+        		return fn.apply(this, args);
+        	};
+        };
+        
+        window.onload=function() {
+            //Add "Copy" and "Open in Editor" buttons for code samples:
+            var inApp = navigator.userAgent.match(/AppleWebKit/i) != null && navigator.userAgent.match(/Safari/i) == null;
+            if (inApp) {
+                codeBlocks = document.getElementsByClassName('highlight-python');
+                for (var i = 0; i < codeBlocks.length; i++) {
+                    codeBlock = codeBlocks[i];
+                    if (codeBlock.innerText.indexOf('>>>') == 0) {
+                        //Don't add header for interactive sessions
+                        continue;
+                    }
+
+                    var codeHeader = document.createElement('div');
+                    codeHeader.className = 'pythonista-code-header';
+
+                    var copyButton = document.createElement('button');
+                    copyButton.className = 'pythonista-button';
+                    copyButton.innerText = 'Copy';
+                    copyButton.addEventListener('click', copySample.partial(i));
+                    codeHeader.appendChild(copyButton);
+
+                    codeBlock.parentElement.insertBefore(codeHeader, codeBlock);
+                }
+            }
+        }
+    </script>
+    
+ 
+
+  </head>
+  <body ontouchstart="">
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="http://omz-software.com/editorial"><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -4px; margin-right: 4px;"/></a></li>
+        <li><a href="../index.html">Editorial Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-editor">
+<span id="editor-functions-for-scripting-editorial-s-text-editor"></span><h1><a class="reference internal" href="#module-editor" title="editor: Scripting Editorial's text editor"><tt class="xref py py-mod docutils literal"><span class="pre">editor</span></tt></a> &#8212; Functions for scripting Editorial&#8217;s text editor<a class="headerlink" href="#module-editor" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-editor" title="editor: Scripting Editorial's text editor"><tt class="xref py py-mod docutils literal"><span class="pre">editor</span></tt></a> module provides access to the text you&#8217;re currently editing.
+You can get and set the selected range and replace text in a given range.</p>
+<p>Please note: Invalid input values for the selection and text manipulation functions
+(e.g. ranges that are out of bounds) are silently ignored as of now. This may
+change in a future release.</p>
+<p>The following functions are provided by the <a class="reference internal" href="#module-editor" title="editor: Scripting Editorial's text editor"><tt class="xref py py-mod docutils literal"><span class="pre">editor</span></tt></a> module:</p>
+<dl class="function">
+<dt id="editor.fold_range">
+<tt class="descclassname">editor.</tt><tt class="descname">fold_range</tt><big>(</big><em>start</em>, <em>end</em><span class="optional">[</span>, <em>label</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#editor.fold_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fold (hides) the given range of text. The optional <cite>label</cite> parameter (a string) is shown as a placeholder. By default, the word count is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.unfold_range">
+<tt class="descclassname">editor.</tt><tt class="descname">unfold_range</tt><big>(</big><em>start</em>, <em>end</em><big>)</big><a class="headerlink" href="#editor.unfold_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unfold all text in the given range. Note that the unfolding is recursive, i.e. if there are nested folds, they are all unfolded at once. The return value is the unfolded text.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.unfold_all">
+<tt class="descclassname">editor.</tt><tt class="descname">unfold_all</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.unfold_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unfold all text in the current document.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.close">
+<tt class="descclassname">editor.</tt><tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the document that is currently loaded in the editor. Changes are saved automatically.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_text">
+<tt class="descclassname">editor.</tt><tt class="descname">get_text</tt><big>(</big><span class="optional">[</span><em>unfold</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#editor.get_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the entire text of the document that is currently being edited.</p>
+<p>The optional <cite>unfold</cite> argument controls how folded (hidden) text is treated. By default, any folded text is represented by a placeholder character (<tt class="docutils literal"><span class="pre">\ufffc</span></tt>). If <cite>unfold</cite> is <cite>True</cite>, the text is returned as if all text was unfolded.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_selection">
+<tt class="descclassname">editor.</tt><tt class="descname">get_selection</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.get_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the selected range as a tuple of the form <cite>(start, end)</cite>.</p>
+<p>If no file is currently open in the editor, <cite>None</cite> is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_selected_text">
+<tt class="descclassname">editor.</tt><tt class="descname">get_selected_text</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.get_selected_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the text that is currently selected in the editor, or <cite>None</cite> if no document is open
+(if a document is open, but no text is selected, an empty string is returned).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_line_selection">
+<tt class="descclassname">editor.</tt><tt class="descname">get_line_selection</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.get_line_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the range of all lines that are part of the current selection as a tuple of the form (start, end)</p>
+<p>If no file is currently open in the editor, <cite>None</cite> is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_path">
+<tt class="descclassname">editor.</tt><tt class="descname">get_path</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the absolute file path of the document that is currently open in the editor, or <cite>None</cite> if no document is open.</p>
+<p>Do <cite>NOT</cite> use this to write to the file. The editor does not recognize automatically when the underlying file changes.
+You can use <a class="reference internal" href="#editor.set_file_contents" title="editor.set_file_contents"><tt class="xref py py-func docutils literal"><span class="pre">set_file_contents()</span></tt></a> for this purpose, but note that <a class="reference internal" href="#editor.set_file_contents" title="editor.set_file_contents"><tt class="xref py py-func docutils literal"><span class="pre">set_file_contents()</span></tt></a> expects a <cite>relative</cite>
+path, not an absolute one, so the return value of this function is not suitable as input.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_scroll_position">
+<tt class="descclassname">editor.</tt><tt class="descname">get_scroll_position</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.get_scroll_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the relative scroll position in the document (between 0.0 and 1.0).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.set_scroll_position">
+<tt class="descclassname">editor.</tt><tt class="descname">set_scroll_position</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#editor.set_scroll_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scroll the editor to a relative position between 0.0 (start of document) and 1.0 (end of document).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.insert_text">
+<tt class="descclassname">editor.</tt><tt class="descname">insert_text</tt><big>(</big><em>text</em><span class="optional">[</span>, <em>scroll</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#editor.insert_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert text at the current caret position. If text is selected, it is replaced.</p>
+<p>By default, the editor adjusts its scroll position, so that the new selection (cursor position) becomes visible. Passing <cite>False</cite> as the optional <cite>scroll</cite> parameter disables this behavior.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.set_selection">
+<tt class="descclassname">editor.</tt><tt class="descname">set_selection</tt><big>(</big><em>start</em><span class="optional">[</span>, <em>end</em>, <em>scroll</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#editor.set_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the selected range in the editor.</p>
+<p><cite>start</cite> and <cite>end</cite> must be integers. If <cite>end</cite> is not given, the caret is positioned at <cite>start</cite> with
+no text selected. By default, the editor adjusts its scroll position, so that the new selection becomes visible. Passing <cite>False</cite> as the optional <cite>scroll</cite> parameter disables this behavior.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.replace_text">
+<tt class="descclassname">editor.</tt><tt class="descname">replace_text</tt><big>(</big><em>start</em>, <em>end</em>, <em>replacement</em><span class="optional">[</span>, <em>scroll</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#editor.replace_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace the text in the given range with <cite>replacement</cite>.</p>
+<p>To insert/append text, a zero-length range can be used.</p>
+<p>All changes can be undone by the user (using the regular undo key). Each
+separate call is a single undo step, regardless of how many characters were
+affected.</p>
+<p>By default, the editor adjusts its scroll position, so that the inserted text becomes visible. Passing <cite>False</cite> as the optional <cite>scroll</cite> parameter disables this behavior.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_file_contents">
+<tt class="descclassname">editor.</tt><tt class="descname">get_file_contents</tt><big>(</big><em>name</em><span class="optional">[</span>, <em>root</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#editor.get_file_contents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the contents of a file in the document library. <cite>root</cite> can be either &#8216;local&#8217; or &#8216;dropbox&#8217;. The default is &#8216;local&#8217;.</p>
+<p>Note that this returns a plain byte string. If you want to get the text of a file that contains unicode, you have to decode it yourself (Editorial saves text files as UTF-8).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.set_file_contents">
+<tt class="descclassname">editor.</tt><tt class="descname">set_file_contents</tt><big>(</big><em>name</em>, <em>new_contents</em><span class="optional">[</span>, <em>root</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#editor.set_file_contents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes new data to the file with the given name (a relative path). If a file with this name exists, it is overwritten.</p>
+<p>Note that <cite>new_contents</cite> is a byte string, which means that you can also use this to write binary files (such as images), but if you write non-ASCII text, you have to encode it yourself.</p>
+<p><cite>root</cite> can be either &#8216;local&#8217; or &#8216;dropbox&#8217;. &#8216;local&#8217; is the default.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_selected_folder">
+<tt class="descclassname">editor.</tt><tt class="descname">get_selected_folder</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.get_selected_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the folder that is currently selected in the file browser as a tuple of <cite>root</cite> (&#8216;local&#8217; or &#8216;dropbox&#8217;) and relative path, e.g. <tt class="docutils literal"><span class="pre">('dropbox',</span> <span class="pre">'/Notes')</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_theme">
+<tt class="descclassname">editor.</tt><tt class="descname">get_theme</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.get_theme" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of the selected color theme, currently either &#8216;Default&#8217; or &#8216;Dark&#8217;. The primary use case for this is to adjust HTML output that is shown in the browser or preview panel.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.reload_files">
+<tt class="descclassname">editor.</tt><tt class="descname">reload_files</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.reload_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reload the document library UI. This can be useful if you write files from Python code that you want to open in the editor. Note: This is handled automatically if the <a class="reference internal" href="#editor.get_file_contents" title="editor.get_file_contents"><tt class="xref py py-func docutils literal"><span class="pre">get_file_contents()</span></tt></a> or <a class="reference internal" href="#editor.set_file_contents" title="editor.set_file_contents"><tt class="xref py py-func docutils literal"><span class="pre">set_file_contents()</span></tt></a> functions are used. While writing files in the local library is generally acceptable, you should <em>never</em> attempt to write in the Dropbox-synced library.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_workflows_path">
+<tt class="descclassname">editor.</tt><tt class="descname">get_workflows_path</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.get_workflows_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the absolute path where workflows are stored. This is also the default working directory for any scripts that are run as part of a workflow.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.reload_workflows">
+<tt class="descclassname">editor.</tt><tt class="descname">reload_workflows</tt><big>(</big><big>)</big><a class="headerlink" href="#editor.reload_workflows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reload the list of workflows. This can be useful if you want to modify workflows programmatically (be very careful with that however). Workflows are stored as JSON, but the exact format is currently not documented and may change in future releases.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.get_bookmarks">
+<tt class="descclassname">editor.</tt><tt class="descname">get_bookmarks</tt><big>(</big><em>collection='editor'</em><big>)</big><a class="headerlink" href="#editor.get_bookmarks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of bookmarks in either the editor&#8217;s bookmarks bar, or the browser&#8217;s bookmarks menu.</p>
+<p>Each bookmark is a dictionary with the keys <tt class="docutils literal"><span class="pre">'title'</span></tt> and <tt class="docutils literal"><span class="pre">'URL'</span></tt>.</p>
+<p>The <cite>collection</cite> parameter can be <tt class="docutils literal"><span class="pre">'editor'</span></tt> or <tt class="docutils literal"><span class="pre">'browser'</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="editor.set_bookmarks">
+<tt class="descclassname">editor.</tt><tt class="descname">set_bookmarks</tt><big>(</big><em>bookmarks[, collection='editor'</em><big>)</big><a class="headerlink" href="#editor.set_bookmarks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the list of bookmarks in the editor&#8217;s bookmarks bar, or the browser&#8217;s bookmarks menu.</p>
+<p><cite>bookmarks</cite> should be a sequence of dictionaries, with each dictionary representing a single bookmark. Each of the bookmark dictionaries must have a <tt class="docutils literal"><span class="pre">'title'</span></tt> and a <tt class="docutils literal"><span class="pre">'URL'</span></tt> key.</p>
+<p>The <cite>collection</cite> parameter can be <tt class="docutils literal"><span class="pre">'editor'</span></tt> or <tt class="docutils literal"><span class="pre">'browser'</span></tt>.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.  
+    <a href="http://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on May 28, 2015.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+
+  </body>
+</html>

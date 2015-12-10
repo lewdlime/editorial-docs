@@ -1,0 +1,19 @@
+.. _workflow-action-search-in-editor:
+
+==================
+Search in Editor
+==================
+
+*Highlights occurrences of a search term in the editor*
+
+This action shows the editor's search bar with the given search term. By default, the results are only highlighted in the document, but the first result can be also be selected automatically.
+
+* **Input:** Can be used as a variable in the `Search Term` parameter
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **Search Term:** The word(s) that should be highlighted.
+* **Select First Result:** When enabled, the first occurrence of the search term (from the current cursor position) is selected automatically.
+

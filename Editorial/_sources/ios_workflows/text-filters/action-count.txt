@@ -1,0 +1,22 @@
+.. _workflow-action-count:
+
+=================
+Count
+=================
+
+*Counts words, sentences, lines, or characters in the input text*
+
+The output is a number. You can use the result in a :ref:`workflow-action-math` action or as regular text.
+
+* **Input:** The text to analyze
+* **Output:** The resulting number, does not include any formatting (e.g. thousands separators)
+
+Parameters
+----------
+
+* **What to Count:** Can be `Words`, `Sentences`, `Lines`, or `Characters`
+
+See Also
+--------
+
+* :ref:`workflow-action-math`

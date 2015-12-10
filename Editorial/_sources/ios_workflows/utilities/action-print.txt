@@ -1,0 +1,21 @@
+.. _workflow-action-print:
+
+=================
+Print...
+=================
+
+*Shows a user interface for printing the input text as HTML or plain text*
+
+* **Input:** The text to print
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **Format:** Whether the input text should be interpreted as plain text or HTML
+* **Font:** This only applies to plain text printing, when using HTML, the fonts are specified via CSS.
+
+See Also
+--------
+
+* :ref:`workflow-action-show-html`

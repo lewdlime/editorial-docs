@@ -1,0 +1,18 @@
+.. _workflow-action-sync-dropbox:
+
+=================
+Sync with Dropbox
+=================
+
+*Starts syncing with Dropbox and waits until it's finished*
+
+If no Dropbox account is linked, this action is simply ignored. Otherwise, a full sync is started, and the workflow continues after it's finished.
+
+* **Input:** N/A
+* **Output:** Same as input
+
+Parameters
+----------
+
+This action has no configurable parameters.
+

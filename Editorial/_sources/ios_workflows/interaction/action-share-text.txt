@@ -1,0 +1,27 @@
+.. _workflow-action-share-text:
+
+==================
+Share Text or URL
+==================
+
+*Shows the iOS Share Sheet*
+
+You can set the initial message text, subject, and recipients. The next action starts when the dialog is dismissed. By default, the workflow is stopped when the email is not sent (by canceling the dialog), but you can also continue the workflow in that case.
+
+Even though initial values for the various parameters can be set, all of these can be changed manually before actually sending the email.
+
+* **Input:** Can be used in the `Text` parameter
+* **Output:** The bundle identifier of the selected sharing activity
+
+Parameters
+----------
+
+* **Text:** The text or URL to share
+* **Share as:** This determines which activities are shown in the share sheet
+
+See Also
+--------
+
+* :ref:`workflow-action-compose-email`
+* :ref:`workflow-action-compose-text-message`
+* :ref:`workflow-action-compose-tweet`

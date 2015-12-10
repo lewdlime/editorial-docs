@@ -1,0 +1,57 @@
+.. _workflow-action-custom-ui:
+
+=================
+Custom UI
+=================
+
+*Shows a custom user interface*
+
+The *Custom UI* action is one of the most powerful actions available in Editorial. It allows you to design your own user interface and trigger other (embedded) workflows for events like button taps, list selections, etc.
+
+When you tap the *Show UI Editor* button in the workflow editor, you're presented with an empty canvas for your controls – you can add text fields, buttons, switches, list views etc. by tapping **+**.
+
+Each type of control has specific attributes that you can modify by tapping the (i) button in the toolbar.
+
+Some controls also have an *action*, which is basically an embedded workflow that is run when you interact with the control, for example by tapping a button. To edit a control's action, tap it in the editor and select "Action…" from the context menu. The first action of such an embedded workflow gets the selected value of the control as its input.
+
+Different controls use different events for triggering their action:
+
+* **Button** -- When tapped
+* **Slider** -- When the value changes by dragging the knob (after the gesture has finished)
+* **Switch** -- When turned on or off
+* **Segmented Control** -- When a different segment is selected
+* **Text Field** -- When the text field loses focus (e.g. by pressing return or selecting a different text field)
+* **Text View** -- Same as Text Field
+* **Web View** -- When a link is tapped in the displayed web page (the input for the action workflow is the URL of the link)
+* **Table View** -- When a row is selected (the input for the action workflow is the title of the row)
+* **Date Picker** -- When the selected date changes
+
+There are three other controls which don't use actions:
+
+* **Label** -- A static (non-editable) piece of text
+* **Scroll View** -- A scrollable canvas, to add content to it, tap it and select "Subviews…" from the context menu. The size of scrollable area is defined by the "Content Width" and "Content Height" attributes
+* **Comment** A "sticky note" that only appears in the editor, not the running UI.
+
+Most controls can also be used as variables in text parameters of embedded workflows and the "Output" parameter of the containing *Custom UI* action. These variables are expanded to a textual representation of the control's current value.
+
+Behind the scenes, the controls of a *Custom UI* action correspond to Python objects from the :mod:`ui` module, so you can mix and match Python code with workflow-based UIs. When you have a custom UI and you want to get at the underlying view objects, you can do this with the :meth:`workflow.get_view` method. This returns the root view of the currently-running *Custom UI* action, and you can use this to traverse the view hierarchy and make changes that wouldn't be possible with workflow actions alone.
+
+* **Input:** Can be used to set control values in the UI's startup workflow
+* **Output:** Set by the *Output* parameter
+
+Parameters
+----------
+
+* **Presentation Style:** When runnning on an iPad, the UI can be shown in a modal sheet, popover or full-screen. On the iPhone, the UI is always presented in full-screen mode.
+
+* **Output:** Specifies the output of the action. You can use values of UI controls as variables here.
+
+* **Use Editor Theme:** When this is enabled, the UI will be styled according to the currently selected editor theme (light or dark). Otherwise, the colors that you set in the UI editor will be unchanged.
+
+See Also
+--------
+
+* :ref:`workflow-action-run-script`
+* :ref:`workflow-action-dismiss-ui`
+* :ref:`workflow-action-set-ui-control-value`
+* :mod:`ui` (Python module)

@@ -1,0 +1,157 @@
+
+.. _ios-workflows-reference:
+
+******************************
+Workflow Actions -- Reference
+******************************
+
+The following reference contains descriptions of what each of the available workflow actions does and information about their input, output, and parameters.
+
+Special
+-------
+
+.. toctree::
+   :maxdepth: 1
+   
+   special/action-condition.rst
+   special/action-custom.rst
+   special/action-custom-ui.rst
+   special/action-generate-text.rst
+   special/action-repeat.rst
+   special/action-run-script.rst
+   special/action-set-variable.rst
+   special/action-stop.rst
+   special/action-sub-workflow.rst
+
+Editor -- Documents
+-------------------
+
+.. toctree::
+   :maxdepth: 1
+   
+   editor/action-create-document.rst
+   editor/action-get-bookmark-url.rst
+   editor/action-get-current-file-name.rst
+   editor/action-document-text.rst
+   editor/action-get-file-contents.rst
+   editor/action-open-document.rst
+   editor/action-set-file-contents.rst
+
+Editor -- Selection
+-------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   editor/action-extend-selection.rst
+   editor/action-selected-text.rst
+   editor/action-search-in-editor.rst
+   editor/action-move-caret.rst
+   editor/action-replace-selected-text.rst
+   editor/action-select-closest-word.rst
+   editor/action-select-range.rst
+
+Editor -- Folding
+-----------------
+
+.. toctree::
+   :maxdepth: 1
+   
+   editor/action-fold-lines-containing.rst
+   editor/action-fold-text.rst
+   editor/action-unfold-all-text.rst
+   
+Sharing
+-------
+
+.. toctree::
+   :maxdepth: 1
+   
+   interaction/action-compose-email.rst
+   interaction/action-compose-text-message.rst
+   interaction/action-tweet.rst
+   interaction/action-share-text.rst
+
+Dialogs & Output
+----------------
+
+.. toctree::
+   :maxdepth: 1
+   
+   interaction/action-console-output.rst
+   interaction/action-request-text-input.rst
+   interaction/action-select-from-list.rst
+   interaction/action-show-alert.rst
+   interaction/action-show-definition.rst
+   interaction/action-show-html.rst
+   interaction/action-show-hud.rst
+
+Text Filters
+------------
+
+.. toctree::
+   :maxdepth: 1
+   
+   text-filters/action-change-case.rst
+   text-filters/action-count.rst
+   text-filters/action-regex-escape.rst
+   text-filters/action-extract-urls.rst
+   text-filters/action-extract-range.rst
+   text-filters/action-expand-snippet.rst
+   text-filters/action-filter-lines.rst
+   text-filters/action-find-replace.rst
+   text-filters/action-match-regular-expression.rst
+   text-filters/action-prefix-suffix-lines.rst
+   text-filters/action-remove-duplicate-lines.rst
+   text-filters/action-remove-whitespace.rst
+   text-filters/action-sort-lines.rst
+   text-filters/action-url-escape.rst   
+
+Document Conversion
+-------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   text-filters/action-html-to-pdf.rst
+   text-filters/action-convert-markdown.rst
+   text-filters/action-convert-multimarkdown.rst
+
+Utilities
+---------
+
+.. toctree::
+   :maxdepth: 1
+
+   utilities/action-get-clipboard.rst
+   utilities/action-math.rst
+   utilities/action-sound-effect.rst
+   utilities/action-print.rst
+   utilities/action-set-clipboard.rst
+   utilities/action-speak-text.rst
+   utilities/action-sync-dropbox.rst
+
+Web Browser
+-----------
+
+.. toctree::
+   :maxdepth: 1
+   
+   web-browser/action-evaluate-javascript.rst
+   web-browser/action-open-url.rst
+   web-browser/action-open-xcallback-url.rst
+   web-browser/action-search-web.rst
+
+UI
+---
+
+.. note::
+   These actions are only available within custom UIs.
+
+.. toctree::
+   :maxdepth: 1
+   
+   ui/action-set-ui-control-value.rst
+   ui/action-evaluate-javascript-in-webview.rst
+   ui/action-dismiss-ui.rst
+   

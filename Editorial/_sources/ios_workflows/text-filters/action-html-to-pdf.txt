@@ -1,0 +1,26 @@
+.. _workflow-action-html-to-pdf:
+
+===========
+HTML to PDF
+===========
+
+*Converts HTML markup or a web page to a PDF file*
+
+* **Input:** Can be used in the HTML/URL parameter
+* **Output:** A ``file://`` URL pointing to the converted PDF document -- this can be used with a :ref:`workflow-action-open-url` action.
+
+Parameters
+----------
+
+* **Source:** What to convert; can be *HTML Code* or *Web URL*
+* **HTML/URL:** Either inline HTML markup or a web URL that should be converted
+* **Paper Size:** A4 or Letter
+* **Page Margins:** One or four values (top, right, bottom, left), separated by spaces. The unit can be 'in' (inches), 'cm' (centimeters), 'mm' (millimeters) or 'pt' (points).
+* **Filename:** The name of the output file
+* **in Dropbox:** Whether the output file is save in Dropbox (local files otherwise)
+* **Overwrite:** When enabled, and a file with the same name already exists, it is overwritten. Otherwise, a numeric suffix is appended.
+
+See Also
+--------
+
+* :ref:`workflow-action-convert-markdown`

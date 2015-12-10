@@ -1,0 +1,29 @@
+.. _workflow-action-repeat:
+
+=================
+Repeat Block...
+=================
+
+*Repeats the contained block of actions*
+
+A repeat block allows you to run a part of your workflow multiple times. You can repeat a block either for each line of the block's input, or for every match of a regular expression.
+
+To make an action part of the repeated block, simply drag it between the "Repeat..." and "...End Repeat" parts.
+
+The first action within the block gets the current line/match as its input. Additionally, the repeat block sets the pre-defined variables "Repeat: Text" and "Repeat: Range" for each iteration. The range variable is set in the form "start:end", e.g. "0:10" if the first 10 characters were matched.
+
+* **Input:** The text that the repetition is based on
+* **Output:** The output of every run of the last action in the block, separated by line breaks.
+
+Parameters
+----------
+
+* **Repeat with:** How the block should be repeated -- can be either for every line in the input, or for every match of a regular expression.
+* **Match Group:** If a regular expression is used, this specifies which group is extracted from the match. By default, the entire match is used.
+* **Reverse:** When enabled, the iteration goes backwards.
+
+See Also
+--------
+
+* :ref:`workflow-action-condition`
+* :ref:`workflow-action-set-variable`
