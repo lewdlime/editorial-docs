@@ -7,3 +7,12 @@ script:
   - "doc2dash -fv --name Editorial -d _build -i icon.png --index-page index.html Editorial"
   - "cp icon@2x.png _build/Editorial.docset"
   - "cd _build && tar --exclude='.DS_Store' -cvzf Editorial.tgz Editorial.docset"
+deploy:
+  provider: releases
+  api_key: "374a4951feda32b612f4519733c58b0ab7b95780"
+  file:
+    - "_build/Editorial.docset"
+    - "_build/Editorial.tgz"
+  skip_cleanup: true
+  on:
+    tags: true
