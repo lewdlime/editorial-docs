@@ -1,0 +1,28 @@
+.. _workflow-action-request-text-input:
+
+==================
+Request Text Input
+==================
+
+*Shows a text input dialog*
+
+The initial text can be set as a parameter (it is empty by default).
+
+The dialog has a `Cancel` button that stops the workflow.
+
+* **Input:** Can be used in the `Initial Text` parameter
+* **Output:** The text that was entered
+
+Parameters
+----------
+
+* **Title:** The title of the dialog, empty by default
+* **Initial Text:** The text that is initially shown in the text input dialog
+* **Single Line / Multiple Lines:** The kind of dialog to show -- the single-line dialog uses the standard system alert appearance.
+* **Keyboard Type:** Can be *Default*, *Numbers & Punctuation*, *URL*, or *Email Address*.
+
+See Also
+--------
+
+* :ref:`workflow-action-show-alert`
+* :ref:`workflow-action-select-from-list`

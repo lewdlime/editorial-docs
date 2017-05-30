@@ -1,0 +1,27 @@
+.. _workflow-action-show-alert:
+
+=================
+Show Alert
+=================
+
+*Shows a message alert with one to three buttons*
+
+You can use an alert either for presenting simple information (usually with a single button), or for requesting a decision. Each of the up to three buttons can pass a different value to the next action. The optional *Cancel* button always stops the workflow.
+
+* **Input:** Can be used in the `Message` and `Output Value` parameters
+* **Output:** The output value parameter of the button that was tapped
+
+Parameters
+----------
+
+* **Title:** The title of the dialog
+* **Message:** The message text of the dialog.
+* **Button 1-3:** The titles of the buttons. The first button is always shown and has the title "OK" by default. When the title of button 2 or 3 is empty, the corresponding button is not shown.
+* **Output Value (1-3):** The output that should be produced by the action when the corresponding button is tapped
+* **Show Cancel Button:** When set to `on` a `Cancel` button is shown in addition to the one to three other buttons. This button always stops the workflow when tapped.
+
+See Also
+--------
+
+* :ref:`workflow-action-request-text-input`
+* :ref:`workflow-action-show-hud`

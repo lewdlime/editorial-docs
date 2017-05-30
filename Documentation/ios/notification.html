@@ -116,8 +116,9 @@
 <dt id="notification.schedule">
 <tt class="descclassname">notification.</tt><tt class="descname">schedule</tt><big>(</big><em>message</em><span class="optional">[</span>, <em>delay</em>, <em>sound_name</em>, <em>action_url</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#notification.schedule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Schedule a notification with the given message text.</p>
+<p>The return value is a <cite>dict</cite> that can be used as the <cite>notification</cite> parameter for the <a class="reference internal" href="#notification.cancel" title="notification.cancel"><tt class="xref py py-func docutils literal"><span class="pre">cancel()</span></tt></a> function.</p>
 <p><cite>delay</cite> is the time interval in seconds until the notification is delivered.</p>
-<p><cite>sound_name</cite> can be any of the bundled sound effects that are also available via the <a class="reference internal" href="sound.html#module-sound" title="sound: Simple sound creation"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a> module. Use an empty string to schedule a silent notification. Using an non-existing sound effect (e.g. &#8216;default&#8217;) will result in the system&#8217;s standard alert sound being played.</p>
+<p><cite>sound_name</cite> can be any of the bundled sound effects that are also available via the <a class="reference internal" href="sound.html#module-sound" title="sound: Sound effects and music playback"><tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt></a> module. Use an empty string to schedule a silent notification. Using an non-existing sound effect (e.g. &#8216;default&#8217;) will result in the system&#8217;s standard alert sound being played.</p>
 <p>With the <cite>action_url</cite> parameter, you can specify a URL that is opened when the notification is activated (e.g. by tapping it in Notification Center). Which app is used to open the URL depends on the URL&#8217;s scheme, e.g. for <tt class="docutils literal"><span class="pre">http:</span></tt> URLs, Safari is used.</p>
 </dd></dl>
 
@@ -150,12 +151,12 @@ from the <a class="reference internal" href="#notification.schedule" title="noti
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2017, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on May 28, 2015.
+    Last updated on Jan 16, 2017.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

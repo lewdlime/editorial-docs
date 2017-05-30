@@ -121,15 +121,15 @@
 <p>To retrieve all reminders that are in the database, simply call <a class="reference internal" href="#reminders.get_reminders" title="reminders.get_reminders"><tt class="xref py py-func docutils literal"><span class="pre">get_reminders()</span></tt></a>. With the <cite>completed</cite> parameter, you can filter the list by their completion status (whether the reminder is checked off).:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">reminders</span>
 <span class="n">todo</span> <span class="o">=</span> <span class="n">reminders</span><span class="o">.</span><span class="n">get_reminders</span><span class="p">(</span><span class="n">completed</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&#39;TODO List&#39;</span>
-<span class="k">print</span> <span class="s">&#39;=========&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;TODO List&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;=========&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">todo</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&#39;[ ] &#39;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">title</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;[ ] &#39;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
 <span class="n">done</span> <span class="o">=</span> <span class="n">reminders</span><span class="o">.</span><span class="n">get_reminders</span><span class="p">(</span><span class="n">completed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&#39;DONE&#39;</span>
-<span class="k">print</span> <span class="s">&#39;====&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;DONE&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;====&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">done</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&#39;[x] &#39;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">title</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;[x] &#39;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -140,7 +140,7 @@
 <span class="n">r</span> <span class="o">=</span> <span class="n">reminders</span><span class="o">.</span><span class="n">Reminder</span><span class="p">()</span>
 <span class="n">r</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Added from Pythonista&#39;</span>
 <span class="n">r</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-<span class="k">print</span> <span class="s">&#39;Reminder added&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Reminder added&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can have multiple lists of reminders in the Reminders app. Those lists are represented by <a class="reference internal" href="#reminders.Calendar" title="reminders.Calendar"><tt class="xref py py-class docutils literal"><span class="pre">Calendar</span></tt></a> objects in this module. If you don&#8217;t specify otherwise, reminders are added to the default list/calendar. To add a reminder to a different list, simply pass the corresponding <a class="reference internal" href="#reminders.Calendar" title="reminders.Calendar"><tt class="xref py py-class docutils literal"><span class="pre">Calendar</span></tt></a> object when creating the reminder.</p>
@@ -154,7 +154,7 @@
         <span class="n">r</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
         <span class="k">break</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&#39;Could not find calendar named &quot;Pythonista&quot;&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Could not find calendar named &quot;Pythonista&quot;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -165,19 +165,19 @@
 <span class="n">all_calendars</span> <span class="o">=</span> <span class="n">reminders</span><span class="o">.</span><span class="n">get_all_calendars</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">calendar</span> <span class="ow">in</span> <span class="n">all_calendars</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">calendar</span><span class="o">.</span><span class="n">title</span> <span class="o">==</span> <span class="s">&#39;Pythonista&#39;</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">&#39;Calendar &quot;Pythonista&quot; already exists&#39;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Calendar &quot;Pythonista&quot; already exists&#39;</span><span class="p">)</span>
         <span class="k">break</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">new_calendar</span> <span class="o">=</span> <span class="n">reminders</span><span class="o">.</span><span class="n">Calendar</span><span class="p">()</span>
     <span class="n">new_calendar</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Pythonista&#39;</span>
     <span class="n">new_calendar</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-    <span class="k">print</span> <span class="s">&#39;New calendar added&#39;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;New calendar added&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="adding-alarms">
 <h3>Adding Alarms<a class="headerlink" href="#adding-alarms" title="Permalink to this headline">¶</a></h3>
-<p>Reminders are much more useful when they actually <em>remind</em> you of something, i.e. show a notification. To do that, you have to add one or more <a class="reference internal" href="#reminders.Alarm" title="reminders.Alarm"><tt class="xref py py-class docutils literal"><span class="pre">Alarm</span></tt></a> objects to a reminder. An <a class="reference internal" href="#reminders.Alarm" title="reminders.Alarm"><tt class="xref py py-class docutils literal"><span class="pre">Alarm</span></tt></a> can be triggered at a specific time, or when entering/leaving a geographic location.</p>
+<p>Reminders are much more useful when they actually <em>remind</em> you of something, i.e. show a notification. To do that, you have to add one or more :class:<a href="#id1"><span class="problematic" id="id2">`</span></a>Alarm`s to a reminder. :class:<a href="#id3"><span class="problematic" id="id4">`</span></a>Alarm`s can be triggered at a specific time, or when entering/leaving a geographic location.</p>
 <p>Let&#8217;s look at date/time-based alarms first. This example adds a new reminder that triggers a notification 25 minutes from now:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">reminders</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
@@ -192,7 +192,7 @@
 <span class="n">a</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">due</span>
 <span class="n">r</span><span class="o">.</span><span class="n">alarms</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
 <span class="n">r</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-<span class="k">print</span> <span class="s">&#39;You will be reminded in </span><span class="si">%i</span><span class="s"> minutes.&#39;</span> <span class="o">%</span> <span class="n">minutes</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;You will be reminded in </span><span class="si">%i</span><span class="s"> minutes.&#39;</span> <span class="o">%</span> <span class="n">minutes</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To add a geolocation-based alarm, you have to specify a title, latitude, and longitude. You can also specify a radius, and whether the alarm should be triggered when <em>entering</em> or <em>leaving</em> that radius:</p>
@@ -300,8 +300,8 @@
 <dl class="class">
 <dt id="reminders.Reminder">
 <em class="property">class </em><tt class="descclassname">reminders.</tt><tt class="descname">Reminder</tt><big>(</big><span class="optional">[</span><em>calendar</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#reminders.Reminder" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="#reminders.Reminder" title="reminders.Reminder"><tt class="xref py py-class docutils literal"><span class="pre">Reminder</span></tt></a> objects represent a single reminder in a list. Reminders can have multiple :class:<a href="#id1"><span class="problematic" id="id2">`</span></a>Alarm`s which determine when/where/if the system shows a notification for the reminder.</p>
-<p>The <cite>calendar</cite> argument is optional &#8211; if you don&#8217;t pass a value, the reminder is created in the default <a class="reference internal" href="#reminders.Calendar" title="reminders.Calendar"><tt class="xref py py-class docutils literal"><span class="pre">Calendar</span></tt></a>.</p>
+<dd><p><a class="reference internal" href="#reminders.Reminder" title="reminders.Reminder"><tt class="xref py py-class docutils literal"><span class="pre">Reminder</span></tt></a> objects represent a single reminder in a list. Reminders can have multiple attached <a class="reference internal" href="#reminders.Alarm" title="reminders.Alarm"><tt class="xref py py-class docutils literal"><span class="pre">Alarm</span></tt></a> objects, which determine when/where/if the system shows a notification for the reminder.</p>
+<p>A reminder is always contained in a <a class="reference internal" href="#reminders.Calendar" title="reminders.Calendar"><tt class="xref py py-class docutils literal"><span class="pre">Calendar</span></tt></a> representing a list of reminders. If you don&#8217;t pass a specific <a class="reference internal" href="#reminders.Calendar" title="reminders.Calendar"><tt class="xref py py-class docutils literal"><span class="pre">Calendar</span></tt></a> when initializing the <a class="reference internal" href="#reminders.Reminder" title="reminders.Reminder"><tt class="xref py py-class docutils literal"><span class="pre">Reminder</span></tt></a>, the default calendar is used.</p>
 </dd></dl>
 
 <div class="section" id="reminder-attributes">
@@ -393,12 +393,12 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-    &copy; <a href="../copyright.html">Copyright</a> 1990-2015, Python Software Foundation.
+    &copy; <a href="../copyright.html">Copyright</a> 1990-2017, Python Software Foundation.
     <br />
     The Python Software Foundation is a non-profit corporation.  
     <a href="http://www.python.org/psf/donations/">Please donate.</a>
     <br />
-    Last updated on Jun 17, 2015.
+    Last updated on Jan 16, 2017.
     <a href="../bugs.html">Found a bug</a>?
     <br />
     Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.

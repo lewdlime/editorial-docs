@@ -1,0 +1,18 @@
+.. _workflow-action-show-definition:
+
+=============================
+Show Dictionary Definition
+=============================
+
+*Shows the definition for the input word in the system dictionary*
+
+The dictionary is shown as a modal dialog. The next action starts when the dialog is dismissed. If the word cannot be found, an error message is shown.
+
+* **Input:** A word to show in the dictionary
+* **Output:** Same as input
+
+Parameters
+----------
+
+This action has no configurable parameters
+

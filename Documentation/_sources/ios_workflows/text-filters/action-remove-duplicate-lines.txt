@@ -1,0 +1,15 @@
+.. _workflow-action-remove-duplicate-lines:
+
+======================
+Remove Duplicate Lines
+======================
+
+*Removes duplicate lines from the input*
+
+* **Input:** The text in which duplicate lines should be removed
+* **Output:** The text with duplicate lines removed. The first occurrence of each duplicate is kept.
+
+See Also
+--------
+
+* :ref:`workflow-action-remove-whitespace`

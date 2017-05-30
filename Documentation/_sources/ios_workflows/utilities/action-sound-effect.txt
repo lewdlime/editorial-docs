@@ -1,0 +1,16 @@
+.. _workflow-action-sound-effect:
+
+=================
+Play Sound Effect
+=================
+
+*Plays a predefined sound effect*
+
+* **Input:** N/A
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **Effect:** You can select from several built-in sound effects
+* **Wait until Finished:** Determines whether the next action starts immediately, or when the sound effect has finished playing.

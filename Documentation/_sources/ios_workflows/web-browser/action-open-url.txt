@@ -1,0 +1,27 @@
+.. _workflow-action-open-url:
+
+=================
+Open URL
+=================
+
+*Opens a URL in a web browser or other app*
+
+The URL can be opened either in the built-in web browser or in Safari / a different app. The built-in web browser and Safari can open http and https URLs, for other URL schemes, third-party apps may be opened if installed. If the URL is invalid or no app can be found to open it, the workflow stops with an error.
+
+When you activate the [%] button next to the URL, any workflow variables that are part of the URL will automatically be URL-escaped, so that you can construct a query string from variables without having to use a separate :ref:`workflow-action-url-escape` action for each variable.
+
+* **Input:** Can be used in the `URL` parameter
+* **Output:** The URL that was opened
+
+Parameters
+----------
+
+* **Open in:** Can be `In-App Browser` or `Safari/Other App`. The in-app browser can only open http, https, or file URLs.
+* **URL:** The URL to open -- it can contain variable placeholders, this is especially useful in combination with the :ref:`workflow-action-url-escape` and :ref:`workflow-action-set-variable` actions.
+* **Wait until Loaded:** If set to `on`, the next action is only run after the page has completed loading (only applies if `In-App Browser` is selected above). This is recommended if you add a :ref:`workflow-action-evaluate-javascript` action afterwards.
+
+See Also
+--------
+
+* :ref:`workflow-action-evaluate-javascript`
+* :ref:`workflow-action-url-escape`

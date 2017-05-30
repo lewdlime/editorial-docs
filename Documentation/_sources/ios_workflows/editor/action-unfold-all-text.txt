@@ -1,0 +1,16 @@
+.. _workflow-action-unfold-all-text:
+
+===============
+Unfold All Text
+===============
+
+*Unfolds all text in the current document*
+
+* **Input:** N/A
+* **Output:** Same as input
+
+See Also
+--------
+
+* :ref:`workflow-action-fold-text`
+* :ref:`workflow-action-fold-lines-containing`

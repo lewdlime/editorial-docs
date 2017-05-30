@@ -1,0 +1,22 @@
+.. _workflow-action-document-text:
+
+==================
+Get Document Text
+==================
+
+*Outputs the entire text of the document that is currently open in the editor.*
+
+If no document is open, the output is empty.
+
+* **Input:** N/A
+* **Output:** The text of the current document
+
+Parameters
+----------
+
+This action does not have any configurable parameters.
+
+See Also
+--------
+
+* :ref:`workflow-action-selected-text`

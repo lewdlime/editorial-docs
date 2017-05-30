@@ -1,0 +1,21 @@
+.. _workflow-action-console-output:
+
+=================
+Console Output
+=================
+
+*Prints text in the Python console panel*
+
+* **Input:** Can be used in the `Text` parameter
+* **Output:** The text that was printed
+
+Parameters
+----------
+
+* **Text:** The text to print -- can contain variable placeholders.
+
+See Also
+--------
+
+* :ref:`workflow-action-show-alert`
+* :ref:`workflow-action-show-hud`

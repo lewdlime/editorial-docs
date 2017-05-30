@@ -1,0 +1,19 @@
+.. _workflow-action-create-document:
+
+=================
+Create Document
+=================
+
+*Creates a new document and opens it in the editor*
+
+This action is primarily intended for document template workflows.
+
+* **Input:** Can be used as a variable in the `Content` or `Filename` parameter
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **File Name:** The name of the file that you want to create. The file will always be created in the folder that is currently selected in the file browser.
+* **Content:** The initial content of the new document. If this field a cursor/selection marker, the keyboard is shown automatically after the file has been created.
+

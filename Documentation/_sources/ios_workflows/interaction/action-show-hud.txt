@@ -1,0 +1,24 @@
+.. _workflow-action-show-hud:
+
+=================
+Show HUD Alert
+=================
+
+*Shows a HUD-style message alert*
+
+A HUD alert is a translucent overlay that doesn't block touches.
+
+* **Input:** Can be used in the `HUD Text` parameter
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **HUD Text:** The message to show -- should be short (otherwise, it's truncated).
+* **Duration:** How long the message is shown (1-3 seconds) -- additionally, this specifies the delay after which the next action in the workflow is started.
+
+See Also
+--------
+
+* :ref:`workflow-action-show-alert`
+* :func:`console.hud_alert` (Python function)

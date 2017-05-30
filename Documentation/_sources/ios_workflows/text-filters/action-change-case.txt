@@ -1,0 +1,15 @@
+.. _workflow-action-change-case:
+
+=================
+Change Case
+=================
+
+*Changes the case of the input to UPPER CASE, lower case, or Title Case*
+
+* **Input:** The text to convert
+* **Output:** The converted text
+
+Parameters
+----------
+
+* **Conversion Type:** The type of case conversion to perform. Note that the `Title Case` option simply converts the first letter of each word to upper case and does not make language-specific exceptions for prepositions or conjunctions.

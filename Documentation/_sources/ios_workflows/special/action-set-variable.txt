@@ -1,0 +1,30 @@
+.. _workflow-action-set-variable:
+
+=================
+Set Variable
+=================
+
+*Stores text in a variable that can be used in other actions*
+
+.. image:: variable.png
+   :align: right
+   :width: 176px
+
+In most text parameters, you can insert placeholders for variables with the "Variable..." button on the extended keyboard. These variables are expanded to their current value before the action is executed. Custom variables are useful to store intermediate results of your workflow. You might also want to put a `Set Variable` action inside a :ref:`workflow-action-condition` to create a placeholder that is only expanded under certain circumstances.
+
+There are several built-in variables for the input of the current action, the contents of the clipboard, various attributes of the editor (selected text, file name...), and the current date. The values for these built-in variables are set automatically and cannot be modified.
+
+* **Input:** Can be used in the `Value` parameter
+* **Output:** Same as input
+
+Parameters
+----------
+
+* **Variable Name:** The name of the variable. Note that if you change the name, you also have to change it in other actions that use the variable as a placeholder.
+* **Value:** The text to store in the variable -- by default, this is the input of the action.
+
+See Also
+--------
+
+* :ref:`workflow-action-format-text`
+* :ref:`workflow-action-set-clipboard`

@@ -1,0 +1,28 @@
+.. _workflow-action-replace-selected-text:
+
+=====================
+Replace Selected Text
+=====================
+
+*Replaces the selection in the text editor with the given text*
+
+If no text is currently selected, the replacement text is *inserted* at the caret position.
+
+.. image:: set_selection_key.png
+   :align: left
+   :width: 52px
+
+The extended keyboard for the *Replacement Text* parameter contains an additional button to set the selection within the inserted text. When you tap it, a special placeholder is inserted that marks the caret position. You can also mark an entire range to be selected after insertion -- simply select it before tapping the button. This can be useful if you want to insert text that you might want to overwrite immediately.
+
+* **Input:** Can be used as a variable in the `Replacement Text` parameter
+* **Output:** The replacement text
+
+Parameters
+----------
+
+* **Replacement Text:** The text that the selection should be replaced with. If the selection is empty, the text is inserted at the position of the caret.
+
+See Also
+--------
+
+* :ref:`workflow-action-document-text`

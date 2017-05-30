@@ -1,0 +1,26 @@
+.. _workflow-action-extend-selection:
+
+================
+Extend Selection
+================
+
+*Extends the current text selection to the left or right*
+
+This action's effect is similar to dragging the two selection handles in the editor. You can also extend the selection to the start/end of the current line/paragraph or the entire document.
+
+* **Input:** Not used
+* **Output:** The selected text
+
+Parameters
+----------
+
+* **Direction:** Can be `Backward`, `Forward`, or `Both`. Additionally, you can specify how far the selection should be extended. This can be the start/end of the document, the start/end selected of line(s) or a number of characters.
+* **Number of Characters:** If the `number of characters` option is used above, this last parameter specifies by how many characters the selection should be extended. This field can contain either a plain number, or a mathematical expression like ``5 + 2``. You can also use variables here. If the number is negative, this has the same effect as using the opposite direction with a positive number.
+
+See Also
+--------
+
+* :ref:`workflow-action-move-caret`
+* :ref:`workflow-action-selected-text`
+* :ref:`workflow-action-select-closest-word`
+  

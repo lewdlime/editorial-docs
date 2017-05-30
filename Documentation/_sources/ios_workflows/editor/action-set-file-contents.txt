@@ -1,0 +1,25 @@
+.. _workflow-action-set-file-contents:
+
+=================
+Set File Contents
+=================
+
+*Sets the text contents of a file in the document library*
+
+If you want to modify the file that you're currently editing, it is usually better to use a :ref:`workflow-action-replace-selected-text` action, possibly in combination with an :ref:`workflow-action-extend-selection` action that selects all text.
+
+* **Input:** Can be used as a variable in the `New Text` parameter
+* **Output:** The text that was saved to the file
+
+Parameters
+----------
+
+* **File Name:** The name of the file that you want to write -- this can include a relative folder path.
+* **In Dropbox:** When set to `on`, the file name is looked for in Dropbox.
+* **New Text:** The text that should be saved to the file
+* **If File Does Not Exist:** Specifies the behavior in case a file with the given name doesn't exist. By default, the file is created.
+
+See Also
+--------
+
+* :ref:`workflow-action-get-file-contents`
